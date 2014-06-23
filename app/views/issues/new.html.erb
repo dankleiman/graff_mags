@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="small-5 columns" id="form">
+    <h2>Add a New Issue</h2>
+    <%= form_for @issue do |f| %>
+      <%= f.label :magazine %><br>
+      <%= f.text_field :magazine %><br>
+
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+
+       <%= f.label :address %><br>
+      <%= f.text_field :address %><br>
+
+       <%= f.label :city %><br>
+      <%= f.text_field :city %><br>
+
+       <%= f.label :state %><br>
+      <%= f.text_field :state %><br>
+
+      <%= f.label :country %><br>
+      <%= f.text_field :country %><br>
+
+      <%= f.submit 'Submit', class: "button" %>
+    <% end %>
+  </div>
+</div>

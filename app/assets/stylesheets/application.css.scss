@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  background: url("http://graffmags.com/wp-content/uploads/2012/01/4.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+main {
+  position: relative;
+  padding: 0px;
+  float: left;
+  margin-top: 0px;
+  background-color: transparent;
+}
+
+section {
+  margin-top: 0px;
+}
+#welcome-top {
+  max-width: 100%;
+  margin-top: 0px;
+}
+
+.top-bar {
+  background: #eee;
+  border-bottom: 1px solid;
+  border-bottom-color: #d3d3d3;
+  height: 115px;
+  opacity: .95;
+}
+
+#welcome-box {
+  background-color: #000;
+  padding-top: 10px;
+  color: #FFF;
+  opacity: 1;
+}
+
+#blank{
+  opacity: 0;
+}
+
+#form {
+  background-color: #FFF;
+}

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :issues, only: :index
+  resources :issues, only: [:index, :new, :create, :show]
 
   root 'issues#index'
   # The priority is based upon order of creation: first created -> highest priority.
