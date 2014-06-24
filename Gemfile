@@ -38,6 +38,8 @@ group :test, :development do
   gem 'capybara'
 end
 
+gem 'devise'
+
 gem 'rails_12factor', group: :production
 
 
