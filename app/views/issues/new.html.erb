@@ -1,30 +1,22 @@
 <div class="row">
   <div class="small-5 columns" id="form">
     <h2>Add a New Issue</h2>
-    <%= form_for @issue do |f| %>
-      <%= f.label :magazine %><br>
-      <%= f.text_field :magazine %><br>
+    <%= simple_form_for @issue do |f| %>
+      <%= f.input :magazine %>
 
-      <%= f.label :title %><br>
-      <%= f.text_field :title %><br>
+      <%= f.input :title %>
 
-      <%= f.label :cover_image, "Cover Image URL" %><br>
-      <%= f.text_field :cover_image %><br>
+      <%= f.input :cover_image, label: "Cover Image URL" %>
 
-      <%= f.label :year, "Year of Publication" %><br>
-      <%= f.text_field :year %><br>
+      <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
-       <%= f.label :address %><br>
-      <%= f.text_field :address %><br>
+      <%= f.input :address %>
 
-       <%= f.label :city %><br>
-      <%= f.text_field :city %><br>
+      <%= f.input :city %>
 
-       <%= f.label :state %><br>
-      <%= f.text_field :state %><br>
+      <%= f.input :state %>
 
-      <%= f.label :country %><br>
-      <%= f.text_field :country %><br>
+      <%= f.input :country, collection: ['US', 'Germany']%>
 
       <%= f.submit 'Submit', class: "button" %>
     <% end %>

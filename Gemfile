@@ -31,6 +31,8 @@ end
 
 gem 'foundation-rails'
 
+gem 'simple_form'
+
 group :test, :development do
   gem 'pry-rails'
   gem 'dotenv-rails'
