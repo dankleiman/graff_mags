@@ -34,6 +34,8 @@ gem 'foundation-rails'
 group :test, :development do
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara'
 end
 
 gem 'rails_12factor', group: :production
