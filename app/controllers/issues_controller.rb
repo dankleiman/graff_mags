@@ -10,7 +10,7 @@ class IssuesController < ApplicationController
     @issue=Issue.new(issue_params)
        if @issue.save
       flash[:notice] = "Successfully added issue."
-      redirect_to issues_path
+      redirect_to issue_path(@issue.id)
     else
       flash[:notice] = "Could not add issue."
       render :new
