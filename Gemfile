@@ -38,7 +38,7 @@ group :test, :development do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 gem 'devise'

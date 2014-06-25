@@ -186,7 +186,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dotenv-rails
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
