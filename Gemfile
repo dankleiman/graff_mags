@@ -42,6 +42,8 @@ group :test, :development do
   gem 'launchy'
 end
 
+gem 'carrierwave'
+
 gem 'devise'
 
 gem 'rails_12factor', group: :production

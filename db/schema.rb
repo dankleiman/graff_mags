@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20140624212844) do
 
   create_table "issues", force: true do |t|
     t.string  "magazine"
-    t.string  "title",       null: false
+    t.string  "title",    null: false
     t.string  "address"
     t.string  "city"
     t.string  "state"
     t.string  "country"
-    t.string  "cover_image"
+    t.string  "cover"
     t.integer "year"
   end
 

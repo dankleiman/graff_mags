@@ -6,7 +6,6 @@ FactoryGirl.define do
     city "Boston"
     state "MA"
     country "US"
-    cover_image "http://graffmags.com/wp-content/uploads/2011/12/TuffCity3_01_lg-540x810.jpg"
     year "1993"
   end
 end

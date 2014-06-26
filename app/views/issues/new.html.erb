@@ -6,8 +6,6 @@
 
       <%= f.input :title %>
 
-      <%= f.input :cover_image, label: "Cover Image URL" %>
-
       <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
       <%= f.input :address %>
@@ -17,6 +15,8 @@
       <%= f.input :state %>
 
       <%= f.input :country, collection: ['US', 'Germany']%>
+
+      <%=f.input :cover, type: :file %>
 
       <%= f.submit 'Submit', class: "button" %>
     <% end %>
