@@ -33,6 +33,7 @@ main {
 section {
   margin-top: 0px;
 }
+
 #welcome-top {
   max-width: 100%;
   margin-top: 0px;
@@ -43,6 +44,20 @@ section {
   border-bottom: 1px solid;
   border-bottom-color: #d3d3d3;
   opacity: .95;
+}
+
+.top-bar .name a {
+  color: #2a2c2e;
+}
+
+.top-bar .name a.hover {
+  color: #14b8f5;
+}
+
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+ background: #eee;
+ color: #2a2c2e;
 }
 
 #welcome-box {
@@ -59,4 +74,7 @@ section {
 #form {
   background-color: #FFF;
 }
+
+
+
 
