@@ -10,7 +10,7 @@ class IssuesController < ApplicationController
     @issue=Issue.new(issue_params)
        if @issue.save
       flash[:notice] = "Successfully added issue."
-      redirect_to issues_path
+      redirect_to issue_path(@issue.id)
     else
       flash[:notice] = "Could not add issue."
       render :new
@@ -25,7 +25,6 @@ class IssuesController < ApplicationController
   private
 
   def issue_params
-    params.require(:issue).permit(:magazine, :title, :year, :cover_image, :address, :city, :state, :country)
-
+    params.require(:issue).permit(:magazine, :title, :year, :cover, :address, :city, :state, :country)
   end
 end

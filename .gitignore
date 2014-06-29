@@ -14,3 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/public/uploads
+
+# Ignore environment variables
+/.env

@@ -39,13 +39,16 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'launchy'
 end
+
+gem 'carrierwave'
 
 gem 'devise'
 
 gem 'rails_12factor', group: :production
 
-
+gem "fog", "~> 1.3.1"
 
 
 # Use ActiveModel has_secure_password
