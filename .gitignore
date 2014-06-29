@@ -16,3 +16,6 @@
 /tmp
 
 /public/uploads
+
+# Ignore environment variables
+/.env

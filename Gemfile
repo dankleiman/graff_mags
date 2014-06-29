@@ -48,7 +48,7 @@ gem 'devise'
 
 gem 'rails_12factor', group: :production
 
-
+gem "fog", "~> 1.3.1"
 
 
 # Use ActiveModel has_secure_password
