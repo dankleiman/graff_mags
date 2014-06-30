@@ -1,4 +1,6 @@
 <h3><%= @issue.magazine%>: <%= @issue.title%></h3>
 
-
-<%= image_tag @issue.cover%>
+<h2>Thumbnail</h2>
+<%= image_tag @issue.cover.thumb%>
+<h2>Medium</h2>
+<%= image_tag @issue.cover.medium%>
