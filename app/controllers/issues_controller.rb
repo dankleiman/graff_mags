@@ -2,6 +2,7 @@ class IssuesController < ApplicationController
   before_action :authorize_user, only: [:new, :create]
 
   def index
+    @issues = Issue.all
   end
 
   def new

@@ -15,7 +15,12 @@ feature 'user uploads issue', %Q(
     issue = FactoryGirl.create(:issue)
     user = FactoryGirl.create(:user, role: 'admin')
 
-    sign_in_as(user)
+    # sign_in_as(user)
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+
     visit new_issue_path
     fill_in 'Magazine', with: issue.magazine
     fill_in 'Title', with: issue.title
@@ -25,9 +30,6 @@ feature 'user uploads issue', %Q(
     click_button 'Submit'
 
     issue.reload
-
-    # binding.pry
-    save_and_open_page
 
     expect(page).to have_content 'Successfully added issue'
     expect(page).to have_image issue.cover.url
