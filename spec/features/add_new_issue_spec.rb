@@ -13,7 +13,9 @@ feature 'user uploads issue', %Q(
   scenario 'user uploads an issue succesfully' do
 
     issue = FactoryGirl.create(:issue)
+    user = FactoryGirl.create(:user, role: 'admin')
 
+    sign_in_as(user)
     visit new_issue_path
     fill_in 'Magazine', with: issue.magazine
     fill_in 'Title', with: issue.title

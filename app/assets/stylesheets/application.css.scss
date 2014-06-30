@@ -54,10 +54,15 @@ section {
   color: #14b8f5;
 }
 
+.top-bar-section{
+  float: right;
+}
 
-.top-bar-section li:not(.has-form) a:not(.button) {
- background: #eee;
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section ul li {
+ background: #eeeeee;
  color: #2a2c2e;
+ padding-right: 5px;
 }
 
 #welcome-box {

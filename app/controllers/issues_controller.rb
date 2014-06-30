@@ -1,4 +1,6 @@
 class IssuesController < ApplicationController
+  before_action :authorize_user, only: [:new, :create]
+
   def index
   end
 
@@ -26,5 +28,11 @@ class IssuesController < ApplicationController
 
   def issue_params
     params.require(:issue).permit(:magazine, :title, :year, :cover, :address, :city, :state, :country)
+  end
+
+  def authorize_user
+    unless user_signed_in? and current_user.is_admin?
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 end
