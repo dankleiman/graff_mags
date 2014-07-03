@@ -11,7 +11,6 @@ class IssuesController < ApplicationController
 
   def create
     @issue=Issue.new(issue_params)
-    binding.pry
        if @issue.save
       flash[:notice] = "Successfully added issue."
       redirect_to issue_path(@issue.id)
