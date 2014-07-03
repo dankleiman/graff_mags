@@ -1,6 +1,24 @@
-<h3><%= @issue.magazine%>: <%= @issue.title%></h3>
+<h1><%= @issue.magazine%>: <%= @issue.title%></h1>
 
-<h2>Thumbnail</h2>
-<%= image_tag @issue.cover.thumb%>
+<h2>Thumbnails</h2>
+<ul class="large-block-grid-3">
+  <li><%= image_tag @issue.front_cover.url(:thumb)%></li>
+  <li><%= image_tag @issue.back_cover.url(:thumb)%></li>
+  <li><%= image_tag @issue.featured_image.url(:thumb)%></li>
+</ul>
+
 <h2>Medium</h2>
-<%= image_tag @issue.cover.medium%>
+
+<ul class="large-block-grid-3">
+  <li><%= image_tag @issue.front_cover.url(:medium)%></li>
+  <li><%= image_tag @issue.back_cover.url(:medium)%></li>
+  <li><%= image_tag @issue.featured_image.url(:medium)%></li>
+</ul>
+
+<h2>Full Size</h2>
+
+<ul class="large-block-grid-1">
+  <li><%= image_tag @issue.front_cover.url%></li>
+  <li><%= image_tag @issue.back_cover.url%></li>
+  <li><%= image_tag @issue.featured_image.url%></li>
+</ul>
