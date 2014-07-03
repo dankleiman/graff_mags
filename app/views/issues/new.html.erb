@@ -11,8 +11,6 @@
 
       <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
-      <%= f.input :language %>
-
       <%= f.input :address %>
 
       <%= f.input :city %>
@@ -20,6 +18,8 @@
       <%= f.input :state %>
 
       <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland']%>
+
+       <%= f.input :language %>
       </div>
       <div>
         <h3>Physical Specs</h3>
