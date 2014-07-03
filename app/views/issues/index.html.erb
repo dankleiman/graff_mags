@@ -1,15 +1,24 @@
 <section id="welcome_top">
-  <div class="row">
-    <div class="large-4 columns" id="welcome-box">
-      <p><strong>Graff Mags</strong> is an organization established to preserve the history of Graffiti magazines</p>
+  <div class="row" id="welcome">
+      <div class="large-4 large-offset-1 columns" id="shoutout">
+        <p><strong>Graff Mags</strong> is an organization established to preserve the history of Graffiti magazines</p>
 
-      <p>Its purpose is to celebrate this art and culture through an innovative library and an ongoing series of collaborative projects with artists from the magazines.</p>
+        <p>Its purpose is to celebrate this art and culture through an innovative library and an ongoing series of collaborative projects with artists from the magazines.</p>
 
-      <p>Drawing from a collection that began in 1993, <strong>Graff Mags</strong> continues to build a comprehensive library of international graffiti magazines with a specific concentration on the 1980's and 1990's.</p>
+        <p>Drawing from a collection that began in 1993, <strong>Graff Mags</strong> continues to build a comprehensive library of international graffiti magazines with a specific concentration on the 1980's and 1990's.</p>
 
-      <a href='#' class="button tiny">READ MORE</a>
+        <a href='#' class="button tiny">READ MORE</a>
+      </div>
     </div>
-    <div class="large-8 columns" id="blank"></div>
+  <div class="row" id="featured_issues">
+    <h2>Issues</h2>
+  <ul class="large-block-grid-4">
+    <% @issues.each do |issue| %>
+      <li><%= link_to(issue_path(issue)) do%>
+        <%= image_tag issue.front_cover.url(:thumb)%>
+       <% end %></li>
+    <% end %>
+  </ul>
   </div>
 </section>
 

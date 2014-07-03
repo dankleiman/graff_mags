@@ -15,30 +15,44 @@
  */
 
  body {
-  background: url("http://graffmags.com/wp-content/uploads/2012/01/4.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
 }
 
 main {
-  position: relative;
-  padding: 0px;
-  float: left;
-  margin-top: 0px;
-  background-color: transparent;
+
 }
 
-section {
-  margin-top: 0px;
+section,
+section .row {
+  margin: 0px;
+  max-width: 100%;
 }
+
 
 #welcome-top {
   max-width: 100%;
   margin-top: 0px;
 }
 
+#welcome {
+  background: url("http://graffmags.com/wp-content/uploads/2012/01/4.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-width: 100%;
+}
+
+#shoutout {
+  background-color: #000;
+  padding-top: 10px;
+  color: #FFF;
+  opacity: .85;
+}
+
+#featured_issues{
+  padding-left: 10%;
+}
 .top-bar {
   background: #eee;
   border-bottom: 1px solid;
