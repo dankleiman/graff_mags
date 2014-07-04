@@ -54,11 +54,18 @@ section .row {
 #featured_issues{
   padding-left: 10%;
 }
+
 .top-bar {
   background: #eee;
   border-bottom: 1px solid;
   border-bottom-color: #d3d3d3;
-  opacity: .95;
+  display:block;
+  height: 100%;
+}
+
+.title-area ul {
+  display:block;
+  overflow:auto;
 }
 
 .top-bar .name a {
