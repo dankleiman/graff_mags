@@ -25,13 +25,13 @@ feature 'user uploads issue', %Q(
     fill_in 'Magazine', with: issue.magazine
     fill_in 'Title', with: issue.title
     fill_in 'City', with: issue.city
-    attach_file('issue[cover]', 'spec/fixtures/cover_test.jpg')
+    attach_file('issue[front_cover]', 'spec/fixtures/cover_test.jpg')
 
     click_button 'Submit'
 
     issue.reload
 
     expect(page).to have_content 'Successfully added issue'
-    expect(page).to have_image issue.cover.url
+    expect(page).to have_image issue.front_cover.url
   end
 end
