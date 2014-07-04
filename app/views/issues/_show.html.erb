@@ -1,14 +1,6 @@
 <h1><%= issue.magazine%>: <%= issue.title%></h1>
-<p>This is the show partial modal</p>
 
-<div class="fade">
-  <div><%= image_tag issue.front_cover.url(:medium)%></div>
-  <div><%= image_tag issue.front_cover.url(:medium)%></div>
-  <div><%= image_tag issue.front_cover.url(:medium)%></div>
-</div>
-
-<ul class="small-block-grid-3">
-  <li><%= image_tag issue.front_cover.url(:thumb)%></li>
-  <li><%= image_tag issue.back_cover.url(:thumb)%></li>
-  <li><%= image_tag issue.featured_image.url(:thumb)%></li>
+<ul class="small-block-grid-2">
+  <li><%= image_tag issue.front_cover.url(:medium)%></li>
+  <li><%= image_tag issue.back_cover.url(:medium)%></li>
 </ul>
