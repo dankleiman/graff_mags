@@ -18,7 +18,7 @@
       <li>
         <%= link_to(image_tag(issue.front_cover.url(:medium)), '#', data: {:'reveal-id' => 'issue_modal'})%>
         <div id="issue_modal" class="reveal-modal" data-reveal>
-          <%= render 'show', issue: issue%>
+          <%= render 'show', issue: issue %>
           <a class="close-reveal-modal">&#215;</a>
         </div>
      </li>
