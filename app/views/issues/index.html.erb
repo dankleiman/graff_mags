@@ -15,9 +15,16 @@
     <h2>Issues</h2>
   <ul class="medium-block-grid-3">
     <% @issues.each do |issue| %>
-      <li><%= link_to(issue_path(issue)) do%>
+      <li>
+        <%= link_to(issue_path(issue)) do%>
         <%= image_tag issue.front_cover.url(:medium)%>
-       <% end %></li>
+        <% end %>
+        <a href="#" data-reveal-id="issue_modal">Click Me For A Modal</a>
+        <div id="issue_modal" class="reveal-modal" data-reveal>
+          <%= render 'show', issue: issue%>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+     </li>
     <% end %>
   </ul>
   </div>
