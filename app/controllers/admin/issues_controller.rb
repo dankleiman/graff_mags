@@ -4,6 +4,10 @@ class Admin::IssuesController < ApplicationController
     @issues = Issue.all
   end
 
+  def edit
+    @issue = Issue.find(params[:id])
+  end
+
   private
 
   def authenticate_admin!

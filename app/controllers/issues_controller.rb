@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :authorize_user, only: [:new, :create]
+  before_action :authenticate_admin!, only: [:new, :create, :update]
 
   def index
     @issues = Issue.all
@@ -11,7 +11,7 @@ class IssuesController < ApplicationController
 
   def create
     @issue=Issue.new(issue_params)
-       if @issue.save
+      if @issue.save
       flash[:notice] = "Successfully added issue."
       redirect_to issue_path(@issue.id)
     else
@@ -24,6 +24,17 @@ class IssuesController < ApplicationController
     @issue = Issue.find(params[:id])
   end
 
+  def update
+    issue = Issue.find(params[:id])
+    issue.update_attributes(issue_params)
+    if issue.save
+      flash[:notice] = "Successfully updated."
+      redirect_to issue_path(issue.id)
+    else
+      flash[:notice] = "Could not update issue."
+      render :new
+    end
+  end
 
   private
 
@@ -31,9 +42,10 @@ class IssuesController < ApplicationController
     params.require(:issue).permit(:magazine, :title, :year, :front_cover, :back_cover, :featured_image, :address, :city, :state, :country)
   end
 
-  def authorize_user
-    unless user_signed_in? and current_user.is_admin?
-      raise ActionController::RoutingError.new('Not Found')
+  def authenticate_admin!
+    unless current_user.role == 'admin'
+      flash[:alert] = 'You are not authorized to view this page.'
+      redirect_to root_url
     end
   end
 end

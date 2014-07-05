@@ -1,4 +1,5 @@
-<div class="normal-content">
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
   <h1>Admin Dashboard</h1>
   <p><%= link_to 'Add a New Issue', new_issue_path %></p>
   <table>
@@ -15,10 +16,11 @@
       <tr>
         <td><%= image_tag issue.front_cover.url(:thumb)%></td>
         <td><%=link_to issue.title, issue_path(issue) %></td>
-        <td>Edit</td>
+        <td><%= link_to 'Edit', edit_admin_issue_path(issue) %></td>
         <td>Delete</td>
       </tr>
       <% end %>
     </tbody>
   </table>
+</div>
 </div>

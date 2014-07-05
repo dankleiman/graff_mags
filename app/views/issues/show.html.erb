@@ -1,5 +1,9 @@
 <h1><%= @issue.magazine%>: <%= @issue.title%></h1>
 
+<%if current_user.role == 'admin' %>
+  <p><%= link_to 'Edit this issue', edit_admin_issue_path(@issue) %></p>
+<% end %>
+
 <h2>Thumbnails</h2>
 <ul class="large-block-grid-3">
   <li><%= image_tag @issue.front_cover.url(:thumb)%></li>
