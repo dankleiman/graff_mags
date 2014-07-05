@@ -1,0 +1,24 @@
+<div class="normal-content">
+  <h1>Admin Dashboard</h1>
+  <p><%= link_to 'Add a New Issue', new_issue_path %></p>
+  <table>
+     <thead>
+      <tr>
+        <th width="200">Issue</th>
+        <th width="150">Visit</th>
+        <th width="150">Edit</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @issues.each do |issue| %>
+      <tr>
+        <td><%= image_tag issue.front_cover.url(:thumb)%></td>
+        <td><%=link_to issue.title, issue_path(issue) %></td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

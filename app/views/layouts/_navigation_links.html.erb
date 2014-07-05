@@ -4,7 +4,7 @@
     <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
   </li>
   <% if current_user.is_admin? %>
-    <li><%= link_to 'Add New Issue', new_issue_path %></li>
+    <li><%= link_to 'Admin Dashboard', admin_issues_path %></li>
   <% end %>
   <% else %>
   <li>
