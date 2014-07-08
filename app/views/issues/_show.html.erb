@@ -1,6 +1,26 @@
-<h1><%= issue.magazine%>: <%= issue.title%></h1>
-
-<ul class="small-block-grid-2">
-  <li><%= image_tag issue.front_cover.url(:medium)%></li>
-  <li><%= image_tag issue.back_cover.url(:medium)%></li>
-</ul>
+<div class="row">
+  <div class="small-7 columns">
+    <h3><%= issue.magazine%></h3>
+  </div>
+  <div class="small-5 columns">
+    <p><%= issue.title%></p>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= image_tag issue.front_cover.url(:medium)%>
+  </div>
+  <div class="small-4 columns">
+    <p><strong>Location:</strong></p>
+    <p><strong>Year:</strong></p>
+  </div>
+</div>
+<div class="row">
+  <div class="small-2 columns">
+    <ul class="small-block-grid-2">
+      <li><%= image_tag issue.front_cover.url(:thumb)%></li>
+      <li><%= image_tag issue.back_cover.url(:thumb)%></li>
+    </ul>
+  </div>
+  <div class="small-10 columns"></div>
+</div>
