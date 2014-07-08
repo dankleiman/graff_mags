@@ -6,7 +6,11 @@
     <%= simple_form_for @issue do |f| %>
       <%= f.input :magazine %>
 
-      <%= f.input :title %>
+      <%= f.input :subtitle, label: "Magazine Subtitle" %>
+
+      <%= f.input :title, label: "Issue Title" %>
+
+      <%= f.input :issue_number, label: "Issue Number" %>
 
       <div>
         <h3>Publication Info</h3>

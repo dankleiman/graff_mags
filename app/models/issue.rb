@@ -9,4 +9,8 @@ class Issue < ActiveRecord::Base
   def self.city(city)
     where('city = ?', city)
   end
+
+  def self.search(query)
+    where('to_tsvector(magazine) @@ plainto_tsquery(?)', query)
+  end
 end
