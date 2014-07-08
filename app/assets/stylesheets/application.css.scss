@@ -101,5 +101,11 @@ section .row {
   background-color: #FFF;
 }
 
+[class*="block-grid-"] > li {
+  display: block;
+  height: auto;
+  float: left;
+  padding: 0;
+}
 
 
