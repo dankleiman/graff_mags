@@ -1,14 +1,19 @@
 <%# navigation styled for Zurb Foundation 5 %>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li><%= link_to(root_path) do%>
-        <%= image_tag "LogoSized.png"%>
-       <% end %></li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-  <div class="top-bar-section">
-    <ul>
-      <%= render 'layouts/navigation_links' %>
+<div class="sticky">
+  <nav class="top-bar" data-topbar>
+     <div class="top-bar-section">
+      <ul>
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+    </div>
+    <ul class="title-area">
+      <li><%= link_to(root_path) do%>
+          <%= image_tag "LogoSized.png"%>
+         <% end %></li>
+       <li>
+        <a class="scroll"><%= image_tag "Library.png"%></a>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
-  </div>
-</nav>
+  </nav>
+</div>

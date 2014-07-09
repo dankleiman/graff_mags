@@ -14,9 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require jquery.scrollTo
 //= require_tree .
 $(function() {
   $(document).foundation();
+  $(".scroll").click(function(){
+    console.log("clicked on library");
+    $('body').scrollTo("#featured_issues", 1000);
+  });
 });
 
 

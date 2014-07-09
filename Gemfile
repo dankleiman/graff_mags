@@ -30,6 +30,7 @@ group :development do
 end
 
 gem 'foundation-rails'
+gem 'jquery-scrollto-rails'
 
 gem 'simple_form'
 
