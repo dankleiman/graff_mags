@@ -39,6 +39,6 @@ class IssuesController < ApplicationController
   private
 
   def issue_params
-    params.require(:issue).permit(:magazine, :title, :year, :front_cover, :back_cover, :featured_image, :address, :city, :state, :country)
+    params.require(:issue).permit(:magazine_id, :title, :year, :front_cover, :back_cover, :featured_image, :address, :city, :state, :country)
   end
 end

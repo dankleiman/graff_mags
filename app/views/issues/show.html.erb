@@ -1,4 +1,4 @@
-<h1><%= @issue.magazine%>: <%= @issue.title%></h1>
+<h1><%= @issue.magazine.title%>: <%= @issue.title%></h1>
 
 <%if current_user.role == 'admin' %>
   <p><%= link_to 'Edit this issue', edit_admin_issue_path(@issue) %></p>
