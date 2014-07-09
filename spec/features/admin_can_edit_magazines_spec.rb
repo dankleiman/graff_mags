@@ -21,4 +21,23 @@ require 'rails_helper'
       expect(page).to have_content magazine.title
     end
 
+     scenario 'admin successfully edits magazine title' do
+      user = FactoryGirl.create(:user, role: 'admin')
+      magazine = FactoryGirl.create(:magazine)
+
+      visit new_user_session_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Sign in'
+
+      visit edit_admin_magazine_path(magazine)
+      fill_in 'Title', with: "Cool New Title"
+      click_button 'Submit'
+
+      magazine.reload
+
+      expect(page).to have_content magazine.title
+      expect(magazine.title).to eq "Cool New Title"
+    end
+
   end

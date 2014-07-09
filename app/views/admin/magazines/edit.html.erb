@@ -1,0 +1,13 @@
+<div class="row">
+  <h2>Edit <%= @magazine.title %></h2>
+</div>
+<div class="row">
+  <div class="small-5 columns" id="form">
+     <%= simple_form_for @magazine do |f| %>
+      <%= f.input :title %>
+      <%= f.input :alternate_titles %>
+      <%= f.submit 'Submit', class: "button" %>
+    <% end %>
+
+  </div>
+</div>
