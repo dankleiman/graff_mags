@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'issues#index'
   namespace :admin do
     resources :issues, only: [:index, :edit, :destroy]
+    resources :magazines, only: [:index, :edit, :destroy]
   end
 end

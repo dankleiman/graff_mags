@@ -22,7 +22,7 @@ feature 'user uploads issue', %Q(
     click_button 'Sign in'
 
     visit new_issue_path
-    fill_in 'Magazine', with: issue.magazine
+    select(issue.magazine.title, :from => 'Magazine')
     fill_in 'Title', with: issue.title
     fill_in 'City', with: issue.city
     attach_file('issue[front_cover]', 'spec/fixtures/cover_test.jpg')

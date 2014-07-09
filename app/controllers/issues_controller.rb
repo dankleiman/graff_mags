@@ -41,11 +41,4 @@ class IssuesController < ApplicationController
   def issue_params
     params.require(:issue).permit(:magazine, :title, :year, :front_cover, :back_cover, :featured_image, :address, :city, :state, :country)
   end
-
-  def authenticate_admin!
-    unless current_user.role == 'admin'
-      flash[:alert] = 'You are not authorized to view this page.'
-      redirect_to root_url
-    end
-  end
 end
