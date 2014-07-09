@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
+  <h1>All Magazines</h1>
+  <table>
+     <thead>
+      <tr>
+        <th width="200">Magazine</th>
+        <th width="150">Alternate Titles</th>
+        <th width="150">Edit</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @magazines.each do |magazine| %>
+      <tr>
+        <td><%= magazine.title %></td>
+        <td><%= magazine.alternate_titles %></td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
