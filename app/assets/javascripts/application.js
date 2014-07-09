@@ -18,10 +18,11 @@
 //= require_tree .
 $(function() {
   $(document).foundation();
-  $(".scroll").click(function(){
+  $("#library").click(function(){
     console.log("clicked on library");
-    $('body').scrollTo("#featured_issues", 1000);
+    $('body').scrollTo("#featured_issues", 1000, {offset: -350});
   });
+
 });
 
 
