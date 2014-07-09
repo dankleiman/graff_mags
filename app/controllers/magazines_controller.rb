@@ -1,4 +1,6 @@
 class MagazinesController < ApplicationController
+  before_action :authenticate_admin!, only: [:new, :create, :update]
+
   def show
     @magazine = Magazine.find(params[:id])
   end
@@ -11,6 +13,21 @@ class MagazinesController < ApplicationController
       redirect_to magazine_path(magazine.id)
     else
       flash[:notice] = "Could not update magazine."
+      render :new
+    end
+  end
+
+  def new
+    @magazine = Magazine.new
+  end
+
+  def create
+    @magazine=Magazine.new(magazine_params)
+      if @magazine.save
+      flash[:notice] = "Successfully added magazine."
+      redirect_to magazine_path(@magazine.id)
+    else
+      flash[:notice] = "Could not add magazine."
       render :new
     end
   end

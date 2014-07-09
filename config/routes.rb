@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :issues, only: [:index, :new, :create, :show, :update]
-  resources :magazines, only:[:show, :update]
+  resources :magazines, only:[:show, :update, :new, :create]
 
   root 'issues#index'
   namespace :admin do
