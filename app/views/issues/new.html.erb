@@ -2,6 +2,7 @@
   <div class="small-5 columns" id="form">
     <h2>Add a New Issue</h2>
     <%= simple_form_for @issue do |f| %>
+
       <%= f.association :magazine %>
 
       <%= f.input :subtitle, label: "Magazine Subtitle" %>

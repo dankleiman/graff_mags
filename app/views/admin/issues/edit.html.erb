@@ -4,7 +4,8 @@
 <div class="row">
   <div class="small-5 columns" id="form">
     <%= simple_form_for @issue do |f| %>
-      <%= f.input :magazine %>
+
+      <%= f.association :magazine %>
 
       <%= f.input :subtitle, label: "Magazine Subtitle" %>
 
