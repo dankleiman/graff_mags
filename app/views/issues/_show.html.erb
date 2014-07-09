@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-7 columns">
-    <h3><%= issue.magazine%></h3>
+    <h3><%= issue.magazine.title%></h3>
   </div>
   <div class="small-5 columns">
     <p><%= issue.title%></p>
@@ -12,7 +12,7 @@
   </div>
   <div class="small-4 columns">
     <p><strong>Location:</strong></p>
-    <p><strong>Year:</strong></p>
+    <p><strong>Year:</strong> <%= issue.title%></p>
   </div>
 </div>
 <div class="row">

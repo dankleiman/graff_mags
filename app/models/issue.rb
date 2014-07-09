@@ -1,4 +1,6 @@
 class Issue < ActiveRecord::Base
+  belongs_to :magazine
+
   validates :magazine, presence: true
   validates :title, presence: true
 
