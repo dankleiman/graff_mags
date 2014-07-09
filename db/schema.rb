@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708211205) do
+ActiveRecord::Schema.define(version: 20140709174224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "issues", force: true do |t|
-    t.string  "magazine"
     t.string  "title",          null: false
     t.string  "address"
     t.string  "city"
@@ -34,6 +33,12 @@ ActiveRecord::Schema.define(version: 20140708211205) do
     t.string  "format"
     t.string  "subtitle"
     t.integer "issue_number"
+    t.integer "magazine_id"
+  end
+
+  create_table "magazines", force: true do |t|
+    t.string "title"
+    t.string "alternate_titles"
   end
 
   create_table "users", force: true do |t|
