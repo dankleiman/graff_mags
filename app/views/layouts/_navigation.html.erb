@@ -1,5 +1,6 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <div class="sticky">
+  <div data-magellan-expedition="fixed">
   <nav class="top-bar" data-topbar>
      <div class="top-bar-section">
       <ul>
@@ -10,7 +11,9 @@
       <li><%= link_to(root_path) do%>
           <%= image_tag "LogoSized.png"%>
          <% end %></li>
+        <li data-magellan-arrival="library"><a href="#library"><%= image_tag "Library.png"%></a></li>
       <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
   </nav>
+</div>
 </div>
