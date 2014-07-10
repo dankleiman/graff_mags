@@ -1,63 +1,65 @@
-<div class="row">
-<h2>Edit <%= @issue.title %></h2>
-</div>
-<div class="row">
-  <div class="small-5 columns" id="form">
-    <%= simple_form_for @issue do |f| %>
+<div class="large-10 large-offset-1 columns">
+  <div class="row">
+  <h2>Edit <%= @issue.title %></h2>
+  </div>
+  <div class="row">
+    <div class="small-5 columns" id="form">
+      <%= simple_form_for @issue do |f| %>
 
-      <%= f.association :magazine %>
+        <%= f.association :magazine %>
 
-      <%= f.input :subtitle, label: "Magazine Subtitle" %>
+        <%= f.input :subtitle, label: "Magazine Subtitle" %>
 
-      <%= f.input :title, label: "Issue Title" %>
+        <%= f.input :title, label: "Issue Title" %>
 
-      <%= f.input :issue_number, label: "Issue Number" %>
+        <%= f.input :issue_number, label: "Issue Number" %>
 
-      <%= f.association :crew %>
+        <%= f.association :crew %>
 
-      <div>
-        <h3>Publication Info</h3>
+        <div>
+          <h3>Publication Info</h3>
 
-       <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
+         <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
-      <%= f.input :address %>
+        <%= f.input :address %>
 
-      <%= f.input :city %>
+        <%= f.input :city %>
 
-      <%= f.input :state %>
+        <%= f.input :state %>
 
-      <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland']%>
+        <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland']%>
 
-       <%= f.association :language %>
-      </div>
-      <div>
-        <h3>Physical Specs</h3>
-       <%= f.association :size %>
+         <%= f.association :language %>
+        </div>
+        <div>
+          <h3>Physical Specs</h3>
+         <%= f.association :size %>
 
-      <%= f.association :stitching, label: "Binding" %>
+        <%= f.association :stitching, label: "Binding" %>
 
-      <%= f.association :medium %>
+        <%= f.association :medium %>
 
-      <%= f.association :format %>
-      </div>
-      <div>
-        <h3>Current Images</h3>
-       <ul class="large-block-grid-3">
-        <li>Front Cover:<br><%= image_tag @issue.front_cover.url(:thumb)%></li>
-        <li>Back Cover:<br><%= image_tag @issue.back_cover.url(:thumb)%></li>
-        <li>Featurerd Image:<br><%= image_tag @issue.featured_image.url(:thumb)%></li>
-      </ul>
-      </div>
-      <div>
-        <h3>Update Images</h3>
-      <%=f.input :front_cover, type: :file %>
+        <%= f.association :format %>
+        </div>
+        <div>
+          <h3>Current Images</h3>
+         <ul class="large-block-grid-3">
+          <li>Front Cover:<br><%= image_tag @issue.front_cover.url(:thumb)%></li>
+          <li>Back Cover:<br><%= image_tag @issue.back_cover.url(:thumb)%></li>
+          <li>Featurerd Image:<br><%= image_tag @issue.featured_image.url(:thumb)%></li>
+        </ul>
+        </div>
+        <div>
+          <h3>Update Images</h3>
+        <%=f.input :front_cover, type: :file %>
 
-      <%=f.input :back_cover, type: :file %>
+        <%=f.input :back_cover, type: :file %>
 
-      <%=f.input :featured_image, type: :file %>
-      </div>
+        <%=f.input :featured_image, type: :file %>
+        </div>
 
-      <%= f.submit 'Submit', class: "button" %>
-    <% end %>
+        <%= f.submit 'Submit', class: "button" %>
+      <% end %>
+    </div>
   </div>
 </div>
