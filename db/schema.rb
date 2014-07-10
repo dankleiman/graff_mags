@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709174224) do
+ActiveRecord::Schema.define(version: 20140710142401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "crews", force: true do |t|
+    t.string "crew"
+  end
+
+  create_table "formats", force: true do |t|
+    t.string "format"
+  end
 
   create_table "issues", force: true do |t|
     t.string  "title",          null: false
@@ -26,19 +34,36 @@ ActiveRecord::Schema.define(version: 20140709174224) do
     t.string  "front_cover"
     t.string  "back_cover"
     t.string  "featured_image"
-    t.string  "language"
-    t.string  "size"
-    t.string  "binding"
-    t.string  "medium"
-    t.string  "format"
     t.string  "subtitle"
     t.integer "issue_number"
     t.integer "magazine_id"
+    t.integer "language_id"
+    t.integer "size_id"
+    t.integer "stitching_id"
+    t.integer "format_id"
+    t.integer "medium_id"
+    t.integer "crew_id"
+  end
+
+  create_table "languages", force: true do |t|
+    t.string "language"
   end
 
   create_table "magazines", force: true do |t|
     t.string "title"
     t.string "alternate_titles"
+  end
+
+  create_table "media", force: true do |t|
+    t.string "medium"
+  end
+
+  create_table "sizes", force: true do |t|
+    t.string "size"
+  end
+
+  create_table "stitchings", force: true do |t|
+    t.string "binding"
   end
 
   create_table "users", force: true do |t|

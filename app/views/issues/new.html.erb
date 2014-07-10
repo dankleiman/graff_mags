@@ -11,6 +11,8 @@
 
       <%= f.input :issue_number, label: "Issue Number" %>
 
+      <%= f.association :crew %>
+
       <div>
         <h3>Publication Info</h3>
 
@@ -24,17 +26,17 @@
 
       <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland']%>
 
-       <%= f.input :language %>
+       <%= f.association :language %>
       </div>
       <div>
         <h3>Physical Specs</h3>
-      <%= f.input :size %>
+      <%= f.association :size %>
 
-      <%= f.input :binding %>
+      <%= f.association :stitching, label: "Binding" %>
 
-      <%= f.input :medium %>
+      <%= f.association :medium %>
 
-      <%= f.input :format %>
+      <%= f.association :format %>
       </div>
 
       <div>

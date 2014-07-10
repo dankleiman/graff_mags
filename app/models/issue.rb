@@ -1,5 +1,11 @@
 class Issue < ActiveRecord::Base
   belongs_to :magazine
+  belongs_to :crew
+  belongs_to :language
+  belongs_to :size
+  belongs_to :stitching
+  belongs_to :medium
+  belongs_to :format
 
   validates :title, presence: true
 
