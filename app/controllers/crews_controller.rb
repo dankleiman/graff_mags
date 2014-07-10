@@ -5,6 +5,10 @@ class CrewsController < ApplicationController
     @crews = Crew.all
   end
 
+  def new
+    @crew = Crew.new
+  end
+
   def create
     @crew = Crew.find_or_create_by(crew_params)
       if @crew.save
@@ -22,6 +26,18 @@ class CrewsController < ApplicationController
 
   def edit
     @crew = Crew.find(params[:id])
+  end
+
+  def update
+    crew = Crew.find(params[:id])
+    crew.update_attributes(crew_params)
+      if crew.save
+      flash[:notice] = "Successfully update crew."
+      redirect_to crew_path(crew.id)
+    else
+      flash[:notice] = "Could not update crew."
+      render :new
+    end
   end
 
   private

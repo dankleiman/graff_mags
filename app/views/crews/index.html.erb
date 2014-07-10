@@ -1,7 +1,7 @@
 <div class="row">
   <div class="large-10 large-offset-1 columns">
   <h1>All Crews</h1>
-  <p><%= link_to 'Add a New Crew', new_admin_crews_path %></p>
+  <p><%= link_to 'Add a New Crew', new_crew_path %></p>
   <table>
      <thead>
       <tr>
@@ -13,7 +13,7 @@
     <tbody>
       <% @crews.each do |crew| %>
       <tr>
-        <td><%= crew.crew %></td>
+        <td><%= link_to crew.crew, crew_path(crew) %></td>
         <td><%= link_to 'Edit', edit_crew_path(crew) %></td>
         <td>Delete</td>
       </tr>

@@ -1,11 +1,14 @@
-<h2><%= @crew.crew %></h2>
-<%if current_user.role == 'admin' %>
-  <p><%= link_to 'Edit this crew', edit_crew_path(@crew) %></p>
-<% end %>
-<ul class="medium-block-grid-2">
-  <% @crew.issues.each do |issue| %>
-    <li>
-      <%= link_to(image_tag(issue.front_cover.url), issue_path(issue)) %>
-    </li>
+<div class="large-10 large-offset-1 columns">
+  <h2><%= @crew.crew %></h2>
+  <%if current_user.role == 'admin' %>
+    <p><%= link_to 'Edit this crew', edit_crew_path(@crew) %></p>
+    <p><%= link_to 'See all crews', crews_path %></p>
   <% end %>
-</ul>
+  <ul class="medium-block-grid-2">
+    <% @crew.issues.each do |issue| %>
+      <li>
+        <%= link_to(image_tag(issue.front_cover.url), issue_path(issue)) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
