@@ -22,7 +22,7 @@ class MagazinesController < ApplicationController
   end
 
   def create
-    @magazine=Magazine.find_or_create_by(magazine_params)
+    @magazine=Magazine.new(magazine_params)
       if @magazine.save
       flash[:notice] = "Successfully added magazine."
       redirect_to magazine_path(@magazine.id)

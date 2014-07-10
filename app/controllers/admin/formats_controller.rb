@@ -8,10 +8,10 @@ class Admin::FormatsController < ApplicationController
   end
 
   def create
-    @format = Format.find_or_create_by(format_params)
+    @format = Format.new(format_params)
       if @format.save
       flash[:notice] = "Successfully added format."
-      redirect_to format_path(@format.id)
+      redirect_to admin_format_path(@format.id)
     else
       flash[:notice] = "Could not add format."
       render :new
@@ -31,7 +31,7 @@ class Admin::FormatsController < ApplicationController
     format.update_attributes(format_params)
       if format.save
       flash[:notice] = "Successfully update format."
-      redirect_to format_path(format.id)
+      redirect_to admin_format_path(format.id)
     else
       flash[:notice] = "Could not update format."
       render :new

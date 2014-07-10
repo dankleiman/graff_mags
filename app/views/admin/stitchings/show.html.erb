@@ -1,0 +1,14 @@
+<div class="large-10 large-offset-1 columns">
+  <h2><%= @stitching.binding %></h2>
+  <%if current_user.role == 'admin' %>
+    <p><%= link_to 'Edit this binding', edit_admin_stitching_path(@stitching) %></p>
+    <p><%= link_to 'See all bindings', admin_stitchings_path %></p>
+  <% end %>
+  <ul class="medium-block-grid-2">
+    <% @stitching.issues.each do |issue| %>
+      <li>
+        <%= link_to(image_tag(issue.front_cover.url), issue_path(issue)) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

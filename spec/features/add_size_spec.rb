@@ -16,7 +16,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit sizes_path
+      visit admin_sizes_path
 
       expect(page).to have_content size.size
     end
@@ -30,7 +30,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit edit_size_path(size)
+      visit edit_admin_size_path(size)
       fill_in 'Size', with: "11x17"
       click_button 'Submit'
 
@@ -49,7 +49,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit new_size_path
+      visit new_admin_size_path
       fill_in 'Size', with: size.size
       click_button 'Submit'
 

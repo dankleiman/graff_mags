@@ -16,7 +16,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit formats_path
+      visit admin_formats_path
 
       expect(page).to have_content format.format
     end
@@ -30,7 +30,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit edit_format_path(format)
+      visit edit_admin_format_path(format)
       fill_in 'Format', with: "Poster"
       click_button 'Submit'
 
@@ -49,7 +49,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit new_format_path
+      visit new_admin_format_path
       fill_in 'Format', with: format.format
       click_button 'Submit'
 

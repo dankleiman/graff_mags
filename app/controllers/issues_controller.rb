@@ -10,8 +10,9 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue=Issue.find_or_create_by(issue_params)
-      if @issue.save
+    @issue = Issue.new(issue_params)
+
+    if @issue.save
       flash[:notice] = "Successfully added issue."
       redirect_to issue_path(@issue.id)
     else

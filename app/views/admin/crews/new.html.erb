@@ -1,0 +1,13 @@
+<div class="large-10 large-offset-1 columns">
+  <div class="row">
+    <h2>Add New Crew</h2>
+  </div>
+  <div class="row">
+    <div class="small-5 columns" id="form">
+     <%= simple_form_for [:admin, @crew] do |f| %>
+     <%= f.input :crew %>
+     <%= f.submit 'Submit', class: "button" %>
+     <% end %>
+   </div>
+ </div>
+</div>

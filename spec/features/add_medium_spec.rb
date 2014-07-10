@@ -16,7 +16,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit media_path
+      visit admin_media_path
 
       expect(page).to have_content medium.medium
     end
@@ -30,7 +30,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit edit_medium_path(medium)
+      visit edit_admin_medium_path(medium)
       fill_in 'Medium', with: "B/W"
       click_button 'Submit'
 
@@ -49,7 +49,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit new_medium_path
+      visit new_admin_medium_path
       fill_in 'Medium', with: medium.medium
       click_button 'Submit'
 

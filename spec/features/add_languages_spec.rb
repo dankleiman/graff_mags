@@ -16,7 +16,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit languages_path
+      visit admin_languages_path
 
       expect(page).to have_content language.language
     end
@@ -30,7 +30,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit edit_language_path(language)
+      visit edit_admin_language_path(language)
       fill_in 'Language', with: "Poster"
       click_button 'Submit'
 
@@ -49,7 +49,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit new_language_path
+      visit new_admin_language_path
       fill_in 'Language', with: language.language
       click_button 'Submit'
 

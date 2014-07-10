@@ -16,7 +16,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit stitchings_path
+      visit admin_stitchings_path
 
       expect(page).to have_content stitching.binding
     end
@@ -30,7 +30,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit edit_stitching_path(stitching)
+      visit edit_admin_stitching_path(stitching)
       fill_in 'Binding', with: "3 side staples"
       click_button 'Submit'
 
@@ -49,7 +49,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit new_stitching_path
+      visit new_admin_stitching_path
       fill_in 'Binding', with: stitching.binding
       click_button 'Submit'
 

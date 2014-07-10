@@ -12,7 +12,7 @@ feature 'user uploads issue', %Q(
 
   scenario 'user uploads an issue succesfully' do
 
-    issue = FactoryGirl.create(:issue)
+    issue = FactoryGirl.build(:issue)
     user = FactoryGirl.create(:user, role: 'admin')
 
     # sign_in_as(user)
@@ -25,11 +25,13 @@ feature 'user uploads issue', %Q(
     select(issue.magazine.title, :from => 'Magazine')
     fill_in 'Title', with: issue.title
     fill_in 'City', with: issue.city
-    attach_file('issue[front_cover]', 'spec/fixtures/cover_test.jpg')
+    attach_file('issue[front_cover]',
+      Rails.root.join('spec/fixtures/cover_test.jpg'))
 
     click_button 'Submit'
 
-    issue.reload
+    expect(Issue.count).to eq(1)
+    issue = Issue.last
 
     expect(page).to have_content 'Successfully added issue'
     expect(page).to have_image issue.front_cover.url

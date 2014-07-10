@@ -16,7 +16,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit crews_path
+      visit admin_crews_path
 
       expect(page).to have_content crew.crew
     end
@@ -30,7 +30,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit edit_crew_path(crew)
+      visit edit_admin_crew_path(crew)
       fill_in 'Crew', with: "Cool New Name"
       click_button 'Submit'
 
@@ -49,7 +49,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      visit new_crew_path
+      visit new_admin_crew_path
       fill_in 'Crew', with: crew.crew
       click_button 'Submit'
 

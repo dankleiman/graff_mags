@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
+  <h1>All Languages</h1>
+  <p><%= link_to 'Add a New Language', new_admin_language_path %></p>
+  <table>
+     <thead>
+      <tr>
+        <th width="200">Language</th>
+        <th width="150">Edit</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @languages.each do |language| %>
+      <tr>
+        <td><%= link_to language.language, admin_language_path(language) %></td>
+        <td><%= link_to 'Edit', edit_admin_language_path(language) %></td>
+        <td>Delete</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+
