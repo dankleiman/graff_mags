@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
+  <h1>All Formats</h1>
+  <p><%= link_to 'Add a New Format', new_format_path %></p>
+  <table>
+     <thead>
+      <tr>
+        <th width="200">Format</th>
+        <th width="150">Edit</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @formats.each do |format| %>
+      <tr>
+        <td><%= link_to format.format, format_path(format) %></td>
+        <td><%= link_to 'Edit', edit_format_path(format) %></td>
+        <td>Delete</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+
