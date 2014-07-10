@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :formats, except: :delete
   resources :languages, except: :delete
   resources :media, except: :delete
+  resources :sizes, except: :delete
 
   root 'issues#index'
   namespace :admin do
