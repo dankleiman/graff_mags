@@ -1,7 +1,5 @@
-<div class="row">
 <% if user_signed_in? %>
   <% if current_user.is_admin? %>
-    <ul>
       <li><%= link_to 'New Issue', new_issue_path %></li>
       <li><%= link_to 'Issues', admin_issues_path %></li>
       <li><%= link_to 'Magazines', admin_magazines_path %></li>
@@ -11,7 +9,5 @@
       <li><%= link_to 'Media', admin_media_path %></li>
       <li><%= link_to 'Sizes', admin_sizes_path %></li>
       <li><%= link_to 'Bindings', admin_stitchings_path %></li>
-    </ul>
   <% end %>
 <% end %>
-</div>

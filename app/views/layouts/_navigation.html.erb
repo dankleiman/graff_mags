@@ -1,19 +1,23 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <div data-magellan-expedition="fixed" class="sticky">
   <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li>
+        <%= link_to(root_path) do%>
+          <%= image_tag "LogoSized.png"%>
+        <% end %>
+      </li>
+    </ul>
      <div class="top-bar-section">
-      <ul>
+      <ul class="right">
+        <%= render 'layouts/admin' %>
         <%= render 'layouts/navigation_links' %>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+      </ul>
+      <ul class="left">
+        <li data-magellan-arrival="library"><a href="#library">Library</a></li>
       </ul>
     </div>
-    <ul class="title-area">
-      <li><%= link_to(root_path) do%>
-          <%= image_tag "LogoSized.png"%>
-         <% end %></li>
-        <li data-magellan-arrival="library"><a href="#library"><%= image_tag "Library.png"%></a></li>
-      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-    </ul>
-     <%= render 'layouts/admin' %>
   </nav>
 </div>
 
