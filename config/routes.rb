@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :magazines, only:[:show, :update, :new, :create]
   resources :crews, except: :delete
   resources :formats, except: :delete
+  resources :languages, except: :delete
 
   root 'issues#index'
   namespace :admin do
