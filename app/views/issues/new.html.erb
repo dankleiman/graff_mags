@@ -11,7 +11,7 @@
 
       <%= f.input :issue_number, label: "Issue Number" %>
 
-      <%= f.association :crew %>
+      <%= f.association :crew, label_method: :crew %>
 
       <div>
         <h3>Publication Info</h3>
@@ -30,13 +30,14 @@
       </div>
       <div>
         <h3>Physical Specs</h3>
-      <%= f.association :size %>
 
-      <%= f.association :stitching, label: "Binding" %>
+      <%= f.association :size, label_method: :size %>
 
-      <%= f.association :medium %>
+      <%= f.association :stitching, label: "Binding", label_method: :binding  %>
 
-      <%= f.association :format %>
+      <%= f.association :medium, label_method: :medium %>
+
+      <%= f.association :format, label_method: :format %>
       </div>
 
       <div>
