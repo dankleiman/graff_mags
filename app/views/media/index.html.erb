@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
+  <h1>All Media</h1>
+  <p><%= link_to 'Add a New Medium', new_medium_path %></p>
+  <table>
+     <thead>
+      <tr>
+        <th width="200">Medium</th>
+        <th width="150">Edit</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @media.each do |medium| %>
+      <tr>
+        <td><%= link_to medium.medium, medium_path(medium) %></td>
+        <td><%= link_to 'Edit', edit_medium_path(medium) %></td>
+        <td>Delete</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+
