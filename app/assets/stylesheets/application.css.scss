@@ -108,4 +108,10 @@ section .row {
   padding: 0;
 }
 
-
+[data-magellan-expedition],
+[data-magellan-expedition-clone] {
+  background: white;
+  z-index: 50;
+  min-width: 100%;
+  padding: 0px;
+}
