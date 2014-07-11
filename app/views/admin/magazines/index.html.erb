@@ -17,7 +17,7 @@
         <td><%= magazine.title %></td>
         <td><%= magazine.alternate_titles %></td>
         <td><%= link_to 'Edit', edit_admin_magazine_path(magazine) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_magazine_path(magazine), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

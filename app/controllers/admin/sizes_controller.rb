@@ -38,6 +38,16 @@ class Admin::SizesController < ApplicationController
     end
   end
 
+  def destroy
+    size = Size.find(params[:id])
+    if size.destroy
+      flash[:notice] = "Successfully deleted."
+    else
+      flash[:notice] = "Could not delete."
+    end
+    redirect_to admin_sizes_path
+  end
+
   private
 
   def size_params

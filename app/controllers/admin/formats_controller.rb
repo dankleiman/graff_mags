@@ -38,6 +38,16 @@ class Admin::FormatsController < ApplicationController
     end
   end
 
+  def destroy
+    format = Format.find(params[:id])
+    if format.destroy
+      flash[:notice] = "Successfully deleted."
+    else
+      flash[:notice] = "Could not delete."
+    end
+    redirect_to admin_formats_path
+  end
+
   private
 
   def format_params

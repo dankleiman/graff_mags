@@ -38,6 +38,17 @@ class Admin::MediaController < ApplicationController
     end
   end
 
+  def destroy
+    medium = Medium.find(params[:id])
+    if medium.destroy
+      flash[:notice] = "Successfully deleted."
+    else
+      flash[:notice] = "Could not delete."
+    end
+    redirect_to admin_media_path
+  end
+
+
   private
 
   def medium_params

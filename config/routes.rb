@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resources :issues, only: [:index, :edit, :destroy]
     resources :magazines, only: [:index, :edit, :destroy]
     resources :crews
-    resources :formats, except: :delete
-    resources :languages, except: :delete
-    resources :media, except: :delete
-    resources :sizes, except: :delete
-    resources :stitchings, except: :delete
+    resources :formats
+    resources :languages
+    resources :media
+    resources :sizes
+    resources :stitchings
   end
 end

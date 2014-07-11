@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to stitching.binding, admin_stitching_path(stitching) %></td>
         <td><%= link_to 'Edit', edit_admin_stitching_path(stitching) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_stitching_path(stitching), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

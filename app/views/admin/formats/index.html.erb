@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to format.format, admin_format_path(format) %></td>
         <td><%= link_to 'Edit', edit_admin_format_path(format) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_format_path(format), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

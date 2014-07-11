@@ -37,6 +37,15 @@ class Admin::StitchingsController < ApplicationController
       render :new
     end
   end
+  def destroy
+    stitching = Stitching.find(params[:id])
+    if stitching.destroy
+      flash[:notice] = "Successfully deleted."
+    else
+      flash[:notice] = "Could not delete."
+    end
+    redirect_to admin_stitchings_path
+  end
 
   private
 

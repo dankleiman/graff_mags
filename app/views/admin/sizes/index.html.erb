@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to size.size, admin_size_path(size) %></td>
         <td><%= link_to 'Edit', edit_admin_size_path(size) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_size_path(size), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

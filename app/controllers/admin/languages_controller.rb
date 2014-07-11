@@ -38,6 +38,16 @@ class Admin::LanguagesController < ApplicationController
     end
   end
 
+  def destroy
+    language = Language.find(params[:id])
+    if language.destroy
+      flash[:notice] = "Successfully deleted."
+    else
+      flash[:notice] = "Could not delete."
+    end
+    redirect_to admin_languages_path
+  end
+
   private
 
   def language_params

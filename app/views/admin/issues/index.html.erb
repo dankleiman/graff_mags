@@ -16,7 +16,7 @@
         <td><%= image_tag issue.front_cover.url(:thumb)%></td>
         <td><%=link_to issue.title, issue_path(issue) %></td>
         <td><%= link_to 'Edit', edit_admin_issue_path(issue) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_issue_path(issue), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

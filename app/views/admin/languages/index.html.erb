@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to language.language, admin_language_path(language) %></td>
         <td><%= link_to 'Edit', edit_admin_language_path(language) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_language_path(language), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

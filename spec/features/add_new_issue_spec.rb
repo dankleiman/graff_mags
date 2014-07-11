@@ -36,4 +36,19 @@ feature 'user uploads issue', %Q(
     expect(page).to have_content 'Successfully added issue'
     expect(page).to have_image issue.front_cover.url
   end
+
+    scenario 'admin deletes a issue' do
+      user = FactoryGirl.create(:user, role: 'admin')
+      issue = FactoryGirl.create(:issue)
+
+      visit new_user_session_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Sign in'
+
+      visit admin_issues_path
+      click_link 'Delete'
+
+      expect(page).not_to have_content issue.title
+    end
 end
