@@ -12,12 +12,3 @@
     <p><strong>Year:</strong> <%= issue.year%></p>
   </div>
 </div>
-<div class="row">
-  <div class="small-2 columns">
-    <ul class="small-block-grid-2">
-      <li><%= image_tag issue.front_cover.url(:thumb)%></li>
-      <li><%= image_tag issue.back_cover.url(:thumb)%></li>
-    </ul>
-  </div>
-  <div class="small-10 columns"></div>
-</div>
