@@ -17,12 +17,19 @@
 //= require_tree .
 $(function() {
   $(document).foundation();
-  $("#library").click(function(){
-    console.log("clicked on library");
-    $('body').scrollTo("#featured_issues", 1000, {offset: -350});
   });
 
+$(document).ready(function(){
+  $('.fade').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    slide: '> div',
+    cssEase: 'linear'
+  });
 });
+
 
 
 

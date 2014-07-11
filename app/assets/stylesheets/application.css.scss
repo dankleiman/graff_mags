@@ -115,3 +115,24 @@ section .row {
   min-width: 100%;
   padding: 0px;
 }
+
+body {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  }
+
+.title-row {
+  margin-bottom: 5px;
+}
+.mag-title {
+  color: #F2B602;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 10px;
+  }
+.modal-image > img {
+  border: 1px solid;
+}

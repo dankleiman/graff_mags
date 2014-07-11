@@ -1,13 +1,10 @@
 <div class="row">
-  <div class="small-4 columns">
-    <p><%= issue.magazine.title%></p>
-  </div>
-  <div class="small-8 columns">
-    <p><%= issue.title%></p>
+  <div class="small-12 columns title-row">
+    <span class="mag-title"><%= issue.magazine.title%></span> <%= issue.title%>
   </div>
 </div>
 <div class="row">
-  <div class="small-8 columns">
+  <div class="small-8 columns modal-image">
     <%= image_tag issue.front_cover.url(:medium)%>
   </div>
   <div class="small-4 columns">

@@ -6,26 +6,10 @@
     <p><%= link_to 'See other issues', magazine_path(@issue.magazine) %></p>
   <% end %>
 
-  <h2>Thumbnails</h2>
-  <ul class="large-block-grid-3">
-    <li><%= image_tag @issue.front_cover.url(:thumb)%></li>
-    <li><%= image_tag @issue.back_cover.url(:thumb)%></li>
-    <li><%= image_tag @issue.featured_image.url(:thumb)%></li>
-  </ul>
-
-  <h2>Medium</h2>
-
-  <ul class="large-block-grid-3">
-    <li><%= image_tag @issue.front_cover.url(:medium)%></li>
-    <li><%= image_tag @issue.back_cover.url(:medium)%></li>
-    <li><%= image_tag @issue.featured_image.url(:medium)%></li>
-  </ul>
-
-  <h2>Full Size</h2>
-
-  <ul class="large-block-grid-1">
-    <li><%= image_tag @issue.front_cover.url%></li>
-    <li><%= image_tag @issue.back_cover.url%></li>
-    <li><%= image_tag @issue.featured_image.url%></li>
-  </ul>
+  <div class="fade">
+    <div><%= image_tag @issue.front_cover.url(:medium)%></div>
+    <div><%= image_tag @issue.back_cover.url(:medium)%></div>
+  </div>
 </div>
+
+
