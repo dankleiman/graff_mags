@@ -1,14 +1,29 @@
 // import the CSS framework
 @import "foundation";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
 
 // override for the 'Home' navigation link
 .top-bar .name {
   font-size: rem-calc(13);
-  line-height: 45px; }
+  line-height: 45px;
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+   }
 .top-bar .name a {
   font-weight: normal;
   color: white;
-  padding: 0 15px; }
+  padding: 0 15px;
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+   }
+.top-bar-section ul li > a {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sub-nav dt, .sub-nav dd, .sub-nav li {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
@@ -45,4 +60,12 @@ main {
 section {
   @extend .row;
   margin-top: 20px;
+  }
+
+body {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
   }

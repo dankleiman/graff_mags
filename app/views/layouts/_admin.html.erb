@@ -1,13 +1,17 @@
 <% if user_signed_in? %>
   <% if current_user.is_admin? %>
-      <li><%= link_to 'New Issue', new_issue_path %></li>
-      <li><%= link_to 'Issues', admin_issues_path %></li>
-      <li><%= link_to 'Magazines', admin_magazines_path %></li>
-      <li><%= link_to 'Crews', admin_crews_path %></li>
-      <li><%= link_to 'Formats', admin_formats_path %></li>
-      <li><%= link_to 'Languages', admin_languages_path %></li>
-      <li><%= link_to 'Media', admin_media_path %></li>
-      <li><%= link_to 'Sizes', admin_sizes_path %></li>
-      <li><%= link_to 'Bindings', admin_stitchings_path %></li>
+    <dl class="sub-nav">
+      <dt>Admin Options:</dt>
+      <dd><%= link_to 'New Issue', new_issue_path %></dd>
+      <dd><%= link_to 'Issues', admin_issues_path %></dd>
+      <dd><%= link_to 'Magazines', admin_magazines_path %></dd>
+      <dd><%= link_to 'Crews', admin_crews_path %></dd>
+      <dd><%= link_to 'Formats', admin_formats_path %></dd>
+      <dd><%= link_to 'Languages', admin_languages_path %></dd>
+      <dd><%= link_to 'Media', admin_media_path %></dd>
+      <dd><%= link_to 'Sizes', admin_sizes_path %></dd>
+      <dd><%= link_to 'Bindings', admin_stitchings_path %></dd>
+    </dl>
   <% end %>
 <% end %>
+
