@@ -38,6 +38,16 @@ class Admin::CrewsController < ApplicationController
     end
   end
 
+  def destroy
+    crew = Crew.find(params[:id])
+    if crew.destroy
+      flash[:notice] = "Successfully deleted."
+    else
+      flash[:notice] = "Could not delete."
+    end
+    redirect_to admin_crews_path
+  end
+
   private
 
   def crew_params

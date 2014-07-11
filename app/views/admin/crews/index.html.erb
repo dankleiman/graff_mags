@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to crew.crew, admin_crew_path(crew) %></td>
         <td><%= link_to 'Edit', edit_admin_crew_path(crew) %></td>
-        <td>Delete</td>
+        <td><%= link_to 'Delete', admin_crew_path(crew), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :issues, only: [:index, :edit, :destroy]
     resources :magazines, only: [:index, :edit, :destroy]
-    resources :crews, except: :delete
+    resources :crews
     resources :formats, except: :delete
     resources :languages, except: :delete
     resources :media, except: :delete
