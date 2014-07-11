@@ -13,6 +13,20 @@ class Issue < ActiveRecord::Base
   mount_uploader :back_cover, FrontCoverUploader
   mount_uploader :featured_image, FrontCoverUploader
 
+  def location
+    location = []
+    if self.city != ""
+      location << self.city
+    end
+    if self.state != ""
+      location << self.state
+    end
+    if self.country != ""
+      location << self.country
+    end
+    location.join(', ')
+  end
+
   def self.city(city)
     where('city = ?', city)
   end
