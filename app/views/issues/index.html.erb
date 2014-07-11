@@ -13,7 +13,7 @@
     </div>
     <a name="library"><div class="row" id="featured_issues"></a>
       <h2>Issues</h2>
-      <ul class="medium-block-grid-6">
+      <ul class="small-block-grid-6">
         <% @issues.each do |issue| %>
           <li>
             <%= link_to(image_tag(issue.featured_image.url(:medium)), '#', data: {:'reveal-id' => "issue-#{issue.id}"})%>

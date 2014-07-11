@@ -19,7 +19,7 @@ require 'rails_helper'
       fill_in 'Password', with: user.password
       click_button 'Sign in'
 
-      expect(page).to have_content 'Admin Dashboard'
+      expect(page).to have_content 'New Issue'
     end
 
      scenario 'admin can edit an issue' do
