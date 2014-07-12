@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_size_path(size)
       fill_in 'Size', with: "11x17"
-      click_button 'Submit'
+      click_button 'Update'
 
       size.reload
 

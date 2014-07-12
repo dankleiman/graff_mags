@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_medium_path(medium)
       fill_in 'Medium', with: "B/W"
-      click_button 'Submit'
+      click_button 'Update'
 
       medium.reload
 

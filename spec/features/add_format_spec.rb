@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_format_path(format)
       fill_in 'Format', with: "Poster"
-      click_button 'Submit'
+      click_button 'Update'
 
       format.reload
 

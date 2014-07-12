@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_magazine_path(magazine)
       fill_in 'Title', with: "Cool New Title"
-      click_button 'Submit'
+      click_button 'Update'
 
       magazine.reload
 

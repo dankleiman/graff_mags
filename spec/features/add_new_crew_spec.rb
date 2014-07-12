@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_crew_path(crew)
       fill_in 'Crew', with: "Cool New Name"
-      click_button 'Submit'
+      click_button 'Update'
 
       crew.reload
 

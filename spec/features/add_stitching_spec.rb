@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_stitching_path(stitching)
       fill_in 'Binding', with: "3 side staples"
-      click_button 'Submit'
+      click_button 'Update'
 
       stitching.reload
 

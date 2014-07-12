@@ -1,55 +1,59 @@
 <div class="row">
-  <div class="small-5 columns" id="form">
+  <div class="small-5 columns basic-info">
     <h2>Add a New Issue</h2>
     <%= simple_form_for @issue do |f| %>
 
-      <%= f.association :magazine %>
+    <%= f.association :magazine %>
 
-      <%= f.input :subtitle, label: "Magazine Subtitle" %>
+    <%= f.input :subtitle, label: "Magazine Subtitle" %>
 
-      <%= f.input :title, label: "Issue Title" %>
+    <%= f.input :title, label: "Issue Title" %>
 
-      <%= f.input :issue_number, label: "Issue Number" %>
+    <%= f.input :issue_number, label: "Issue Number" %>
 
-      <%= f.association :crew, label_method: :crew %>
+    <%= f.association :crew, label_method: :crew %>
+  </div>
+  <div class="small-7 columns"></div>
+</div>
+<div class="row issue-details">
+  <div class="small-6 columns">
+    <h3>Publication Info</h3>
 
-      <div>
-        <h3>Publication Info</h3>
+    <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
-      <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
+    <%= f.input :address %>
 
-      <%= f.input :address %>
+    <%= f.input :city %>
 
-      <%= f.input :city %>
+    <%= f.input :state %>
 
-      <%= f.input :state %>
+    <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland', 'Spain', 'Italy']%>
 
-      <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland', 'Spain', 'Italy']%>
+    <%= f.association :language %>
+  </div>
+  <div class="small-6 columns">
+    <h3>Physical Specs</h3>
 
-       <%= f.association :language %>
-      </div>
-      <div>
-        <h3>Physical Specs</h3>
+    <%= f.association :size, label_method: :size %>
 
-      <%= f.association :size, label_method: :size %>
+    <%= f.association :stitching, label: "Binding", label_method: :binding  %>
 
-      <%= f.association :stitching, label: "Binding", label_method: :binding  %>
+    <%= f.association :medium, label_method: :medium %>
 
-      <%= f.association :medium, label_method: :medium %>
-
-      <%= f.association :format, label_method: :format %>
-      </div>
-
-      <div>
-        <h3>Images</h3>
-      <%=f.input :front_cover, type: :file %>
-
-      <%=f.input :back_cover, type: :file %>
-
-      <%=f.input :featured_image, type: :file %>
-      </div>
-
-      <%= f.submit 'Submit', class: "button" %>
-    <% end %>
+    <%= f.association :format, label_method: :format %>
   </div>
 </div>
+<div class="row image-select">
+  <div class="small-6 colums">
+    <h3>Images</h3>
+    <%=f.input :front_cover, type: :file %>
+
+    <%=f.input :back_cover, type: :file %>
+
+    <%=f.input :featured_image, type: :file %>
+    <%= f.submit 'Submit', class: "button radius" %>
+  <% end %>
+  </div>
+  <div class="small-6 columns"></div>
+</div>
+

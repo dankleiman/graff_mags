@@ -20,13 +20,15 @@ $(function() {
   });
 
 $(document).ready(function(){
-  $('.fade').slick({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    slide: '> div',
-    cssEase: 'linear'
+  //defaults to hidden section
+  $('.issue-details').hide();
+  $(".basic-info").append("<p><a href='#'>Add More Details</a></p>");
+
+  //reveals more fields for data entry
+  $(".basic-info a").click(function(){
+    event.preventDefault();
+    $('.issue-details').show();
+    $(this).hide();
   });
 });
 

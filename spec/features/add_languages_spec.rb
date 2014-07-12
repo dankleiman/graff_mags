@@ -32,7 +32,7 @@ require 'rails_helper'
 
       visit edit_admin_language_path(language)
       fill_in 'Language', with: "Poster"
-      click_button 'Submit'
+      click_button 'Update'
 
       language.reload
 
