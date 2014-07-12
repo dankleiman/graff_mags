@@ -1,9 +1,6 @@
-<div class="large-10 large-offset-1 columns">
-  <div class="row">
+<div class="row">
+  <div class="small-5 columns basic-info">
   <h2>Edit <%= @issue.title %></h2>
-  </div>
-  <div class="row">
-    <div class="small-5 columns" id="form">
       <%= simple_form_for @issue do |f| %>
 
         <%= f.association :magazine %>
@@ -15,23 +12,26 @@
         <%= f.input :issue_number, label: "Issue Number" %>
 
         <%= f.association :crew, label_method: :crew %>
+      </div>
+      <div class="small-7 columns"></div>
+    </div>
+    <div class="row issue-details">
+      <div class="small-6 columns">
+        <h3>Publication Info</h3>
 
-        <div>
-          <h3>Publication Info</h3>
+       <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
-         <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
+      <%= f.input :address %>
 
-        <%= f.input :address %>
+      <%= f.input :city %>
 
-        <%= f.input :city %>
+      <%= f.input :state %>
 
-        <%= f.input :state %>
+      <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland', 'Spain', 'Italy']%>
 
-        <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland', 'Spain', 'Italy']%>
-
-         <%= f.association :language %>
-        </div>
-        <div>
+       <%= f.association :language %>
+      </div>
+     <div class="small-6 columns">
           <h3>Physical Specs</h3>
           <%= f.association :size, label_method: :size %>
 
@@ -40,16 +40,18 @@
         <%= f.association :medium, label_method: :medium %>
 
         <%= f.association :format, label_method: :format %>
-        </div>
-        <div>
+      </div>
+    </div>
+    <div class="row">
           <h3>Current Images</h3>
          <ul class="large-block-grid-3">
           <li>Front Cover:<br><%= image_tag @issue.front_cover.url(:thumb)%></li>
           <li>Back Cover:<br><%= image_tag @issue.back_cover.url(:thumb)%></li>
           <li>Featurerd Image:<br><%= image_tag @issue.featured_image.url(:thumb)%></li>
         </ul>
-        </div>
-        <div>
+    </div>
+    <div class="row image-select">
+      <div class="small-6 colums">
           <h3>Update Images</h3>
         <%=f.input :front_cover, type: :file %>
 
@@ -61,5 +63,5 @@
         <%= f.submit 'Update', class: "button radius" %>
       <% end %>
     </div>
-  </div>
+  <div class="small-6 columns"></div>
 </div>
