@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710142401) do
+ActiveRecord::Schema.define(version: 20140712141515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "countries", force: true do |t|
+    t.string "country"
+  end
 
   create_table "crews", force: true do |t|
     t.string "crew"
@@ -29,7 +33,6 @@ ActiveRecord::Schema.define(version: 20140710142401) do
     t.string  "address"
     t.string  "city"
     t.string  "state"
-    t.string  "country"
     t.integer "year"
     t.string  "front_cover"
     t.string  "back_cover"
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140710142401) do
     t.integer "format_id"
     t.integer "medium_id"
     t.integer "crew_id"
+    t.integer "country_id"
   end
 
   create_table "languages", force: true do |t|
