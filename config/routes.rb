@@ -14,4 +14,12 @@ Rails.application.routes.draw do
     resources :sizes
     resources :stitchings
   end
+  namespace :api do
+    namespace :v1 do
+      resources :issues
+    end
+  end
+get '*path', to: 'issues#index'
 end
+
+
