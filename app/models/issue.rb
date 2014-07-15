@@ -21,7 +21,7 @@ class Issue < ActiveRecord::Base
     if self.state != ""
       location << self.state
     end
-    if self.country != ""
+    if self.country != nil
       location << self.country
     end
     location.join(', ')
