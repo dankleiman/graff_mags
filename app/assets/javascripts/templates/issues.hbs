@@ -1,5 +1,8 @@
 <h1>Issues</h1>
-<ul>
-{{#each issue in issues}}
-  <li>issue.featuredImage</li>
+<ul class="small-block-grid-6">
+{{#each}}
+  <li>
+    <button {{action 'openModal' 'modal'}}><img {{bind-attr src=featuredImageThumb}} /></button>
+  </li>
 {{/each}}
+{{outlet modal}}
