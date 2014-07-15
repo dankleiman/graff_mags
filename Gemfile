@@ -51,6 +51,8 @@ gem "fog", "~> 1.3.1"
 
 gem "mini_magick"
 
+gem 'ember-rails'
+gem 'ember-source'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
