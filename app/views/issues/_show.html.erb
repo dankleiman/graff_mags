@@ -4,15 +4,26 @@
   </div>
 </div>
 <div class="row">
-  <div class="small-8 columns modal-image">
-      <div><%= image_tag issue.front_cover.url%></div>
+  <div class="small-8 columns">
+    <div class="modal-image featured-front-cover">
+      <%= image_tag issue.front_cover.url%>
     </div>
+    <div class="modal-image featured-back-cover">
+      <%= image_tag issue.back_cover.url%>
+    </div>
+  </div>
   <div class="small-4 columns">
     <div class="row">
-      <div class="small-6 columns"><%= image_tag issue.front_cover.url%></div>
-      <div class="small-6 columns"><%= image_tag issue.back_cover.url%></div>
-    <div>
-    <p><strong>Location:</strong> <%= issue.location%></p>
-    <p><strong>Year:</strong> <%= issue.year%></p>
+      <div class="small-6 columns front-cover">
+        <a href='#'><%= image_tag issue.front_cover.url%></a>
+      </div>
+      <div class="small-6 columns back-cover">
+        <a href='#'><%= image_tag issue.back_cover.url%></a>
+      </div>
+    </div>
+    <div class="row">
+      <p><strong>Location</strong><br><%= issue.location%></p>
+      <p><strong>Year</strong><br><%= issue.year%></p>
+    </div>
   </div>
 </div>

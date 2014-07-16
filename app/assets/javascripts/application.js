@@ -33,7 +33,21 @@ $(document).ready(function(){
     event.preventDefault();
     $('.issue-details').show();
     $(this).hide();
+     });
+  //display cover based on thumbnail click
+  $('.featured-back-cover').hide();
+  $(".back-cover a").click(function(){
+    event.preventDefault();
+    $('.featured-front-cover').hide();
+    $('.featured-back-cover').show();
   });
+   $(".front-cover a").click(function(){
+    event.preventDefault();
+    $('.featured-front-cover').show();
+    $('.featured-back-cover').hide();
+  });
+
+
 });
 
 
