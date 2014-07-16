@@ -3,17 +3,10 @@ App.IssuesRoute = Ember.Route.extend({
     return this.store.find('issue');
   },
   actions: {
-    openModal: function(modal){
-      return this.render(modal, {
-        into: 'issues',
-        outlet: 'modal'
-      });
-    },
-    closeModal: function(){
-      return this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'issues'
-      });
+    openModal: function(content){
+      console.log('openModal from issues.js');
+      this.controllerFor('reveal').set('content', content);
+      $('#issueModal').reveal();
     }
   }
 });

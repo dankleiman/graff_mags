@@ -2,7 +2,7 @@
 <ul class="small-block-grid-6">
 {{#each}}
   <li>
-    <button {{action 'openModal' 'modal'}}><img {{bind-attr src=featuredImageThumb}} /></button>
+    <a {{action 'openModal' this}} href="#"><img {{bind-attr src=featuredImageThumb}} /></a>
   </li>
 {{/each}}
-{{outlet modal}}
+
