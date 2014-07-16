@@ -1,0 +1,14 @@
+<div class="large-10 large-offset-1 columns">
+  <h2><%= @country.country %></h2>
+  <%if current_user.role == 'admin' %>
+    <p><%= link_to 'Edit this country', edit_admin_country_path(@country) %></p>
+    <p><%= link_to 'See all countrys', admin_countries_path %></p>
+  <% end %>
+  <ul class="medium-block-grid-2">
+    <% @country.issues.each do |issue| %>
+      <li>
+        <%= link_to(image_tag(issue.front_cover.url), issue_path(issue)) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

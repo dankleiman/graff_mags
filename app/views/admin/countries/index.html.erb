@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
+  <h1>All Countries</h1>
+  <p><%= link_to 'Add a New Country', new_admin_Country_path %></p>
+  <table>
+     <thead>
+      <tr>
+        <th width="200">Country</th>
+        <th width="150">Edit</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @countries.each do |country| %>
+      <tr>
+        <td><%= link_to Country.country, admin_country_path(country) %></td>
+        <td><%= link_to 'Edit', edit_admin_country_path(country) %></td>
+        <td><%= link_to 'Delete', admin_country_path(country), method: :delete %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+
