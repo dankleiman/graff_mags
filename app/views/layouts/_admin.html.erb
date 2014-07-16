@@ -2,7 +2,6 @@
   <% if current_user.is_admin? %>
     <dl class="sub-nav">
       <dt>Admin Options:</dt>
-      <dd><%= link_to 'New Issue', new_issue_path %></dd>
       <dd><%= link_to 'Issues', admin_issues_path %></dd>
       <dd><%= link_to 'Magazines', admin_magazines_path %></dd>
       <dd><%= link_to 'Countries', admin_countries_path %></dd>

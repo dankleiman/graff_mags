@@ -1,0 +1,15 @@
+<div class="large-10 large-offset-1 columns">
+  <h1><%= @issue.magazine.title%>: <%= @issue.title%></h1>
+
+  <%if current_user.role == 'admin' %>
+    <p><%= link_to 'Edit this issue', edit_admin_issue_path(@issue) %></p>
+    <p><%= link_to 'See other issues', magazine_path(@issue.magazine) %></p>
+  <% end %>
+
+  <div class="fade">
+    <div><%= image_tag @issue.front_cover.url(:medium)%></div>
+    <div><%= image_tag @issue.back_cover.url(:medium)%></div>
+  </div>
+</div>
+
+

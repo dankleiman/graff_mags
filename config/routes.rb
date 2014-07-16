@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :issues, only: [:index, :new, :create, :show, :update]
+  resources :issues, only: [:index, :show]
   resources :magazines, only:[:show, :update, :new, :create]
 
   root 'issues#index'
   namespace :admin do
-    resources :issues, only: [:index, :edit, :destroy]
+    resources :issues
     resources :magazines, only: [:index, :edit, :destroy]
     resources :crews
     resources :formats
