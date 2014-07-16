@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140712141515) do
+ActiveRecord::Schema.define(version: 20140716022614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140712141515) do
   end
 
   create_table "issues", force: true do |t|
-    t.string  "title",          null: false
+    t.string  "title",                     null: false
     t.string  "address"
     t.string  "city"
     t.string  "state"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140712141515) do
     t.integer "format_id"
     t.integer "medium_id"
     t.integer "crew_id"
+    t.string  "country",        limit: 50
     t.integer "country_id"
   end
 

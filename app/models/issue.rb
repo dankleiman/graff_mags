@@ -6,6 +6,7 @@ class Issue < ActiveRecord::Base
   belongs_to :stitching
   belongs_to :medium
   belongs_to :format
+  belongs_to :country
 
   validates :title, presence: true
 

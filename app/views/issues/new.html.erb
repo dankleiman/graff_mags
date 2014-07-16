@@ -27,7 +27,7 @@
 
     <%= f.input :state %>
 
-    <%= f.input :country, collection: ['US', 'Germany', 'UK', 'France', 'Switzerland', 'Spain', 'Italy']%>
+    <%= f.association :country %>
 
     <%= f.association :language %>
   </div>
