@@ -27,9 +27,9 @@
 
     <%= f.input :state %>
 
-    <%= f.association :country %>
+    <%= f.association :country, label_method: :country%>
 
-    <%= f.association :language %>
+    <%= f.association :language, label_method: :language %>
   </div>
   <div class="small-6 columns">
     <h3>Physical Specs</h3>

@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :media
     resources :sizes
     resources :stitchings
+    resources :countries
   end
 end

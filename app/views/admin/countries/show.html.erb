@@ -2,7 +2,7 @@
   <h2><%= @country.country %></h2>
   <%if current_user.role == 'admin' %>
     <p><%= link_to 'Edit this country', edit_admin_country_path(@country) %></p>
-    <p><%= link_to 'See all countrys', admin_countries_path %></p>
+    <p><%= link_to 'See all countries', admin_countries_path %></p>
   <% end %>
   <ul class="medium-block-grid-2">
     <% @country.issues.each do |issue| %>
