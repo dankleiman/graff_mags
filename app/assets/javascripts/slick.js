@@ -7,4 +7,5 @@ $(document).ready(function(){
   slide: '> div',
   cssEase: 'linear'
 });
+  console.log('slick is ready to go');
 });
