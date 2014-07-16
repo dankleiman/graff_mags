@@ -1,11 +1,12 @@
 $(document).ready(function(){
-  $('.fade').slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  slide: '> div',
-  cssEase: 'linear'
-});
+  $('.single-item').slick();
+  // $('.fade').slick({
+  // dots: true,
+  // infinite: true,
+  // speed: 500,
+  // fade: true,
+  // slide: '> div',
+  // cssEase: 'linear'
+  // });
   console.log('slick is ready to go');
 });
