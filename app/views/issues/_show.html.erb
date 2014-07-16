@@ -5,11 +5,14 @@
 </div>
 <div class="row">
   <div class="small-8 columns modal-image">
-    <%= image_tag issue.front_cover.url(:medium)%>
-  </div>
+      <div><%= image_tag issue.front_cover.url%></div>
+    </div>
   <div class="small-4 columns">
+    <div class="row">
+      <div class="small-6 columns"><%= image_tag issue.front_cover.url%></div>
+      <div class="small-6 columns"><%= image_tag issue.back_cover.url%></div>
+    <div>
     <p><strong>Location:</strong> <%= issue.location%></p>
     <p><strong>Year:</strong> <%= issue.year%></p>
   </div>
 </div>
-

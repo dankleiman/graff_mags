@@ -19,6 +19,10 @@ $(function() {
   $(document).foundation();
   });
 
+$('.reveal-modal').on('opened', function() {
+        $(window).trigger('reflow');
+    });
+
 $(document).ready(function(){
   //defaults to hidden section
   $('.issue-details').hide();
