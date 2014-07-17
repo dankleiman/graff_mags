@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   root 'issues#index'
   namespace :admin do
-    resources :issues
+    resources :issues do
+       get :autocomplete_magazine_title, :on => :collection
+    end
     resources :magazines, only: [:index, :edit, :destroy]
     resources :crews
     resources :formats

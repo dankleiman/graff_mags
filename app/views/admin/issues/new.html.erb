@@ -3,7 +3,7 @@
     <h2>Add a New Issue</h2>
     <%= simple_form_for [:admin, @issue] do |f| %>
 
-    <%= f.input :magazine_title, label: "Magazine Title" %>
+    <%= f.input :magazine_title, :url => autocomplete_magazine_title_admin_issues_path, :as => :autocomplete, label: "Magazine Title" %>
 
     <%= f.input :subtitle, label: "Magazine Subtitle" %>
 
