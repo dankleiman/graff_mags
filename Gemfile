@@ -66,3 +66,4 @@ gem "rails4-autocomplete"
 # gem 'debugger', group: [:development, :test]
 
 gem "jquery-ui-rails"
+gem 'unicorn'
