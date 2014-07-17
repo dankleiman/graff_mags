@@ -19,7 +19,7 @@ require 'rails_helper'
         fill_in 'Password', with: user.password
         click_button 'Sign in'
 
-        visit new_issue_path
+        visit new_admin_issue_path
 
         expect(page).to have_selector(".issue-details", visible: false)
     end
@@ -33,7 +33,7 @@ require 'rails_helper'
         fill_in 'Password', with: user.password
         click_button 'Sign in'
 
-        visit new_issue_path
+        visit new_admin_issue_path
         click_link 'Add More Details'
 
         expect(page).to have_content 'Year of Publication'

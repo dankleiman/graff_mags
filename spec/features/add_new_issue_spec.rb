@@ -21,10 +21,9 @@ feature 'user uploads issue', %Q(
     fill_in 'Password', with: user.password
     click_button 'Sign in'
 
-    visit new_issue_path
-    select(issue.magazine.title, :from => 'Magazine')
-    fill_in 'Title', with: issue.title
-    fill_in 'City', with: issue.city
+    visit new_admin_issue_path
+    fill_in 'Magazine Title', with: issue.magazine_title
+    fill_in 'Issue Title', with: issue.title
     attach_file('issue[front_cover]',
       Rails.root.join('spec/fixtures/cover_test.jpg'))
 

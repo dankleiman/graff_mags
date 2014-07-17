@@ -14,7 +14,7 @@
       <ul class="small-block-grid-6">
         <% @issues.each do |issue| %>
           <li>
-            <%= link_to(image_tag(issue.featured_image.url(:medium), alt: "#{issue.magazine.title}: #{issue.title}"), '#', data: {:'reveal-id' => "issue-#{issue.id}"})%>
+            <%= link_to(image_tag(issue.featured_image.url(:medium), alt: "#{issue.magazine_title}: #{issue.title}"), '#', data: {:'reveal-id' => "issue-#{issue.id}"})%>
             <div id="issue-<%= issue.id %>" class="reveal-modal large" data-reveal>
               <%= render 'show', issue: issue %>
               <a class="close-reveal-modal">&#215;</a>
