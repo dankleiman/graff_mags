@@ -28,6 +28,14 @@ class Issue < ActiveRecord::Base
     location.join(', ')
   end
 
+  def magazine_title
+    magazine.title if magazine
+  end
+
+  def magazine_title=(title)
+    self.magazine = Magazine.find_or_create_by(title: title) unless title.blank?
+  end
+
   def self.search(query)
     where('to_tsvector(magazine) @@ plainto_tsquery(?)', query)
   end

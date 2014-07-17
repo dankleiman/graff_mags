@@ -1,9 +1,9 @@
 <div class="row">
   <div class="small-5 columns basic-info">
   <h2>Edit <%= @issue.title %></h2>
-      <%= simple_form_for @issue do |f| %>
+      <%= simple_form_for [:admin, @issue] do |f| %>
 
-        <%= f.association :magazine %>
+        <%= f.input :magazine_title, label: "Magazine Title" %>
 
         <%= f.input :subtitle, label: "Magazine Subtitle" %>
 

@@ -8,11 +8,11 @@ class Admin::IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.new(issue_params)
-
-    if @issue.save
+    issue = Issue.new(issue_params)
+    binding.pry
+    if issue.save
       flash[:notice] = "Successfully added issue."
-      redirect_to admin_issue_path(@issue.id)
+      redirect_to admin_issue_path(issue.id)
     else
       flash[:notice] = "Could not add issue."
       render :new
@@ -53,7 +53,7 @@ class Admin::IssuesController < ApplicationController
 
   def issue_params
     params.require(:issue).permit(
-      :magazine_id,
+      :magazine_title,
       :title,
       :year,
       :front_cover,
