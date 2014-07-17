@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -28,7 +29,6 @@ group :development do
 end
 
 gem 'foundation-rails'
-gem 'jquery-scrollto-rails'
 
 gem 'simple_form'
 
@@ -52,8 +52,6 @@ gem "fog", "~> 1.3.1"
 gem "mini_magick"
 
 gem "rails4-autocomplete"
-gem "jquery-ui-rails"
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -67,3 +65,4 @@ gem "jquery-ui-rails"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "jquery-ui-rails"

@@ -15,17 +15,15 @@
 //= require jquery-ui
 //= require foundation
 //= require autocomplete-rails
-//= require jquery.scrollTo
 //= require_tree .
+
 $(function() {
   $(document).foundation();
+
+  $('.reveal-modal').on('opened', function() {
+    $(window).trigger('reflow');
   });
 
-$('.reveal-modal').on('opened', function() {
-        $(window).trigger('reflow');
-    });
-
-$(document).ready(function(){
   //defaults to hidden section
   $('.issue-details').hide();
   //reveals more fields for data entry
@@ -33,20 +31,20 @@ $(document).ready(function(){
     event.preventDefault();
     $('.issue-details').toggle();
     $('p').toggle();
+  });
+
   //display cover based on thumbnail click
   $('.featured-back-cover').hide();
-  $(".back-cover a").click(function(){
+
+  $(".back-cover a").click(function(event){
     event.preventDefault();
     $('.featured-front-cover').hide();
     $('.featured-back-cover').show();
   });
-   $(".front-cover a").click(function(){
+
+  $(".front-cover a").click(function(event){
     event.preventDefault();
     $('.featured-front-cover').show();
     $('.featured-back-cover').hide();
   });
 });
-
-
-
-
