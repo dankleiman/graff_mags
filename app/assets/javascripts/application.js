@@ -24,13 +24,13 @@ $(function() {
 $(document).ready(function(){
   //defaults to hidden section
   $('.issue-details').hide();
-  $(".basic-info").append("<p><a href='#'>Add More Details</a></p>");
+  // $(".details").append("<p><a href='#'>Add More Details</a></p>");
 
   //reveals more fields for data entry
-  $(".basic-info a").click(function(){
+  $(".details a").click(function(event){
     event.preventDefault();
-    $('.issue-details').show();
-    $(this).hide();
+    $('.issue-details').toggle();
+    $('p').toggle();
   });
 });
 
