@@ -17,4 +17,6 @@ Rails.application.routes.draw do
     resources :stitchings
     resources :countries
   end
+
+  get "*any", via: :all, to: "errors#not_found"
 end

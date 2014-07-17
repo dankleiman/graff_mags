@@ -22,6 +22,6 @@ module GraffMags
 
     # For Foundation 5
     config.assets.precompile += %w( vendor/modernizr )
-
+    config.exceptions_app = self.routes
   end
 end
