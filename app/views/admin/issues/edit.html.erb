@@ -1,8 +1,9 @@
 <div class="row">
-  <div class="small-5 columns basic-info">
-  <h2>Edit <%= @issue.title %></h2>
-      <%= simple_form_for [:admin, @issue] do |f| %>
-
+  <div class="small-12 columns basic-info">
+    <h2>Edit <%= @issue.title %></h2>
+    <%= simple_form_for [:admin, @issue] do |f| %>
+    <div class="row">
+      <div class="small-5 columns basic-info">
         <%= f.input :magazine_title, label: "Magazine Title" %>
 
         <%= f.input :subtitle, label: "Magazine Subtitle" %>
@@ -19,21 +20,21 @@
       <div class="small-6 columns">
         <h3>Publication Info</h3>
 
-       <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
+        <%= f.input :year, label: "Year of Publication", collection: 1970..2014 %>
 
-      <%= f.input :address %>
+        <%= f.input :address %>
 
-      <%= f.input :city %>
+        <%= f.input :city %>
 
-      <%= f.input :state %>
+        <%= f.input :state %>
 
-      <%= f.association :country, label_method: :country %>
+        <%= f.association :country, label_method: :country %>
 
-      <%= f.association :language, label_method: :language %>
+        <%= f.association :language, label_method: :language %>
       </div>
-     <div class="small-6 columns">
-          <h3>Physical Specs</h3>
-          <%= f.association :size, label_method: :size %>
+      <div class="small-6 columns">
+        <h3>Physical Specs</h3>
+        <%= f.association :size, label_method: :size %>
 
         <%= f.association :stitching, label: "Binding", label_method: :binding  %>
 
@@ -47,25 +48,27 @@
       <p style="display: none"><a href='#'>Hide Details</a></p>
     </div>
     <div class="row">
-          <h3>Current Images</h3>
-         <ul class="large-block-grid-3">
-          <li>Front Cover:<br><%= image_tag @issue.front_cover.url(:thumb)%></li>
-          <li>Back Cover:<br><%= image_tag @issue.back_cover.url(:thumb)%></li>
-          <li>Featurerd Image:<br><%= image_tag @issue.featured_image.url(:thumb)%></li>
-        </ul>
+      <h3>Current Images</h3>
+      <ul class="large-block-grid-3">
+        <li>Front Cover:<br><%= image_tag @issue.front_cover.url(:thumb)%></li>
+        <li>Back Cover:<br><%= image_tag @issue.back_cover.url(:thumb)%></li>
+        <li>Featurerd Image:<br><%= image_tag @issue.featured_image.url(:thumb)%></li>
+      </ul>
     </div>
     <div class="row image-select">
       <div class="small-6 colums">
-          <h3>Update Images</h3>
+        <h3>Update Images</h3>
         <%=f.input :front_cover, type: :file %>
 
         <%=f.input :back_cover, type: :file %>
 
         <%=f.input :featured_image, type: :file %>
-        </div>
+      </div>
 
-        <%= f.submit 'Update', class: "button radius" %>
+      <%= f.submit 'Update', class: "button radius" %>
       <% end %>
     </div>
-  <div class="small-6 columns"></div>
+    <div class="small-6 columns"></div>
+  </div>
+</div>
 </div>

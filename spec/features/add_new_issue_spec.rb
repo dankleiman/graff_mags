@@ -30,7 +30,7 @@ feature 'user uploads issue', %Q(
     issue = Issue.last
 
     expect(page).to have_content 'Successfully added issue'
-    expect(page).to have_image issue.front_cover.url
+    expect(page).to have_image issue.front_cover.url(:medium)
   end
 
     scenario 'admin deletes a issue' do
