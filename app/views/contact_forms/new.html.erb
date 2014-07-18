@@ -8,6 +8,7 @@
      <%= f.input :name %>
      <%= f.input :email %>
      <%= f.input :message, as: :text %>
+     <div><%= f.check_box :subscribe %> <%= f.label "Subscribe to our email newsletter" %></div>
 
      <%= f.submit 'Send Message', class: "button radius" %>
      <% end %>
