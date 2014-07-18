@@ -26,7 +26,7 @@ feature 'user uploads issue', %Q(
 
     click_button 'Submit'
 
-    # expect(Issue.count).to eq(1)
+    expect(Issue.count).to eq(1)
     issue = Issue.last
 
     expect(page).to have_content 'Successfully added issue'
