@@ -4,6 +4,8 @@ class ContactForm < MailForm::Base
 
   attribute :message
 
+  attribute :subscribe
+
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
