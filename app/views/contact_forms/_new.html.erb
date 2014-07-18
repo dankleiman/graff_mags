@@ -1,0 +1,10 @@
+<div class="small-12 columns">
+  <h2>Contact Us</h2>
+   <%= simple_form_for(ContactForm.new, url: contact_forms_path) do |f| %>
+   <%= f.input :name %>
+   <%= f.input :email %>
+   <%= f.input :message, as: :text %>
+
+   <%= f.submit 'Send Message', class: "button radius" %>
+   <% end %>
+</div>

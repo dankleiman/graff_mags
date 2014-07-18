@@ -1,6 +1,6 @@
 <div class="small-12 columns">
   <h2>Sign in</h2>
-  <%= form_for(User.new, url: user_session_path) do |f| %>
+  <%= simple_form_for(User.new, url: user_session_path) do |f| %>
     <div><%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %></div>
 
