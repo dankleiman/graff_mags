@@ -23,7 +23,7 @@ class Issue < ActiveRecord::Base
       location << self.state
     end
     if self.country != nil
-      location << self.country
+      location << self.country.country
     end
     location.join(', ')
   end
