@@ -64,7 +64,7 @@ class Admin::IssuesController < ApplicationController
       :address,
       :city,
       :state,
-      :country,
+      :country_id,
       :subtitle,
       :issue_number,
       :language_id,
