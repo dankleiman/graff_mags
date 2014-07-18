@@ -11,10 +11,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       stitching = FactoryGirl.create(:stitching)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_stitchings_path
 
@@ -25,10 +22,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       stitching = FactoryGirl.create(:stitching)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit edit_admin_stitching_path(stitching)
       fill_in 'Binding', with: "3 side staples"
@@ -44,10 +38,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       stitching = FactoryGirl.build(:stitching)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit new_admin_stitching_path
       fill_in 'Binding', with: stitching.binding
@@ -59,10 +50,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       stitching = FactoryGirl.create(:stitching)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_stitchings_path
       click_link 'Delete'

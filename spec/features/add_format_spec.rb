@@ -11,10 +11,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       format = FactoryGirl.create(:format)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_formats_path
 
@@ -25,10 +22,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       format = FactoryGirl.create(:format)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit edit_admin_format_path(format)
       fill_in 'Format', with: "Poster"
@@ -44,10 +38,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       format = FactoryGirl.build(:format)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit new_admin_format_path
       fill_in 'Format', with: format.format
@@ -59,10 +50,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       format = FactoryGirl.create(:format, format: 'Postcard')
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_formats_path
       click_link 'Delete'

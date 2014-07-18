@@ -13,7 +13,7 @@ class Admin::CountriesController < ApplicationController
       flash[:notice] = "Successfully added Country."
       redirect_to admin_country_path(@country.id)
     else
-      flash[:notice] = "Could not add Country."
+      flash[:alert] = "Could not add Country."
       render :new
     end
   end
@@ -33,7 +33,7 @@ class Admin::CountriesController < ApplicationController
       flash[:notice] = "Successfully update country."
       redirect_to admin_country_path(country.id)
     else
-      flash[:notice] = "Could not update country."
+      flash[:alert] = "Could not update country."
       render :new
     end
   end
@@ -43,7 +43,7 @@ class Admin::CountriesController < ApplicationController
     if country.destroy
       flash[:notice] = "Successfully deleted."
     else
-      flash[:notice] = "Could not delete."
+      flash[:alert] = "Could not delete."
     end
     redirect_to admin_countries_path
   end

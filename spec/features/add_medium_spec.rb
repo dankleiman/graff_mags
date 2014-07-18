@@ -11,10 +11,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       medium = FactoryGirl.create(:medium)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_media_path
 
@@ -25,10 +22,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       medium = FactoryGirl.create(:medium)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit edit_admin_medium_path(medium)
       fill_in 'Medium', with: "B/W"
@@ -44,10 +38,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       medium = FactoryGirl.build(:medium)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit new_admin_medium_path
       fill_in 'Medium', with: medium.medium
@@ -60,10 +51,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       medium = FactoryGirl.create(:medium)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_media_path
       click_link 'Delete'

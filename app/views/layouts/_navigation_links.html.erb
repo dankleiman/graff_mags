@@ -5,6 +5,11 @@
   </li>
   <% else %>
   <li>
-    <%= link_to('Sign in', new_user_session_path)  %>
+    <%= link_to('Sign in', '#', data: {:'reveal-id' => "sign-in"})%>
   </li>
 <% end %>
+
+<div id="sign-in" class="reveal-modal small" data-reveal>
+  <%= render "users/sessions/new", resource: User.new %>
+  <a class="close-reveal-modal" data-reveal>&#215;</a>
+</div>

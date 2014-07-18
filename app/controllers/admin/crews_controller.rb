@@ -13,7 +13,7 @@ class Admin::CrewsController < ApplicationController
       flash[:notice] = "Successfully added crew."
       redirect_to admin_crew_path(@crew.id)
     else
-      flash[:notice] = "Could not add crew."
+      flash[:alert] = "Could not add crew."
       render :new
     end
   end
@@ -33,7 +33,7 @@ class Admin::CrewsController < ApplicationController
       flash[:notice] = "Successfully update crew."
       redirect_to admin_crew_path(crew.id)
     else
-      flash[:notice] = "Could not update crew."
+      flash[:alert] = "Could not update crew."
       render :new
     end
   end
@@ -43,7 +43,7 @@ class Admin::CrewsController < ApplicationController
     if crew.destroy
       flash[:notice] = "Successfully deleted."
     else
-      flash[:notice] = "Could not delete."
+      flash[:alert] = "Could not delete."
     end
     redirect_to admin_crews_path
   end

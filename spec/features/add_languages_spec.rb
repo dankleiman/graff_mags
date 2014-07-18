@@ -11,10 +11,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       language = FactoryGirl.create(:language)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_languages_path
 
@@ -25,10 +22,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       language = FactoryGirl.create(:language)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit edit_admin_language_path(language)
       fill_in 'Language', with: "Poster"
@@ -44,10 +38,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       language = FactoryGirl.build(:language)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit new_admin_language_path
       fill_in 'Language', with: language.language
@@ -60,10 +51,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       language = FactoryGirl.create(:language)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_languages_path
       click_link 'Delete'

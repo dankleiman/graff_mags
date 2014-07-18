@@ -12,26 +12,20 @@ require 'rails_helper'
     # User sees a success message
 
     scenario 'user signs in successfully' do
-      attrs = {
-        email: "dog@face.com",
-        password: "Secret12345",
-      }
+      user = FactoryGirl.create(:user)
 
-      user = User.create!(attrs)
-
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       expect(page).to have_content 'Signed in successfully.'
     end
 
     scenario 'user tries to sign in without an account' do
       visit new_user_session_path
-      fill_in 'Email', with: 'dog@face.com'
-      fill_in 'Password', with: 'Secret12345'
-      click_button 'Sign in'
+      within('#form') do
+        fill_in 'Email', with: 'dog@face.com'
+        fill_in 'Password', with: 'Secret12345'
+        click_button 'Sign in'
+      end
 
       expect(page).not_to have_content 'Signed in successfully.'
       expect(page).to have_content 'Invalid'

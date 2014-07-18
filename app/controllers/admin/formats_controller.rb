@@ -13,7 +13,7 @@ class Admin::FormatsController < ApplicationController
       flash[:notice] = "Successfully added format."
       redirect_to admin_format_path(@format.id)
     else
-      flash[:notice] = "Could not add format."
+      flash[:alert] = "Could not add format."
       render :new
     end
   end
@@ -33,7 +33,7 @@ class Admin::FormatsController < ApplicationController
       flash[:notice] = "Successfully update format."
       redirect_to admin_format_path(format.id)
     else
-      flash[:notice] = "Could not update format."
+      flash[:alert] = "Could not update format."
       render :new
     end
   end
@@ -43,7 +43,7 @@ class Admin::FormatsController < ApplicationController
     if format.destroy
       flash[:notice] = "Successfully deleted."
     else
-      flash[:notice] = "Could not delete."
+      flash[:alert] = "Could not delete."
     end
     redirect_to admin_formats_path
   end

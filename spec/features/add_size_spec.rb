@@ -11,10 +11,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       size = FactoryGirl.create(:size)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_sizes_path
 
@@ -25,10 +22,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       size = FactoryGirl.create(:size)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit edit_admin_size_path(size)
       fill_in 'Size', with: "11x17"
@@ -44,10 +38,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       size = FactoryGirl.build(:size)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit new_admin_size_path
       fill_in 'Size', with: size.size
@@ -60,10 +51,7 @@ require 'rails_helper'
       user = FactoryGirl.create(:user, role: 'admin')
       size = FactoryGirl.create(:size)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_sizes_path
       click_link 'Delete'

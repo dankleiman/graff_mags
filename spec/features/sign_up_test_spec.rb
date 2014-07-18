@@ -17,16 +17,17 @@ feature 'user signs up or registers', %Q(
     attrs = {
       email: "dog@face.com",
       password: "Secret12345",
-      password_confirmation: "Secret12345"
     }
 
     user = User.new(attrs)
 
     visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password_confirmation
-    click_on 'Sign up'
+    within('#form') do
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      fill_in 'Password confirmation', with: user.password
+      click_on 'Sign up'
+    end
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
 
@@ -36,15 +37,16 @@ feature 'user signs up or registers', %Q(
 
     attrs = {
       password: "Secret12345",
-      password_confirmation: "Secret12345"
     }
 
     user = User.new(attrs)
 
     visit new_user_registration_path
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password_confirmation
-    click_on 'Sign up'
+    within('#form') do
+      fill_in 'Password', with: user.password
+      fill_in 'Password confirmation', with: user.password
+      click_on 'Sign up'
+    end
 
     expect(page).not_to have_content(
       'Welcome! You have signed up successfully.')
@@ -59,8 +61,10 @@ feature 'user signs up or registers', %Q(
     user = User.new(attrs)
 
     visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    click_on 'Sign up'
+    within('#form') do
+      fill_in 'Email', with: user.email
+      click_on 'Sign up'
+    end
 
     expect(page).not_to have_content (
       'Welcome! You have signed up successfully.')

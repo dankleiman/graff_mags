@@ -15,9 +15,14 @@
       </ul>
       <ul class="left">
         <li data-magellan-arrival="library"><a href="#library">Library</a></li>
+        <li><a href="#" data-reveal-id="contact">Contact</a></li>
       </ul>
       <%= render 'layouts/admin' %>
     </div>
   </nav>
 </div>
 
+<div id="contact" class="reveal-modal small" data-reveal>
+  <%= render 'layouts/contact' %>
+  <a class="close-reveal-modal" data-reveal>&#215;</a>
+</div>

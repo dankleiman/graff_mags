@@ -31,6 +31,7 @@ end
 gem 'foundation-rails'
 
 gem 'simple_form'
+gem 'mail_form'
 
 group :test, :development do
   gem 'pry-rails'
@@ -39,6 +40,8 @@ group :test, :development do
   gem 'capybara'
   gem "factory_girl_rails", "~> 4.0"
   gem 'launchy'
+  gem 'email_spec'
+  gem 'mailcatcher'
 end
 
 gem 'carrierwave'
@@ -67,3 +70,4 @@ gem "rails4-autocomplete"
 
 gem "jquery-ui-rails"
 gem 'unicorn'
+

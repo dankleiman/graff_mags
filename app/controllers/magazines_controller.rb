@@ -12,7 +12,7 @@ class MagazinesController < ApplicationController
       flash[:notice] = "Successfully updated."
       redirect_to magazine_path(magazine.id)
     else
-      flash[:notice] = "Could not update magazine."
+      flash[:alert] = "Could not update magazine."
       render :new
     end
   end
@@ -27,7 +27,7 @@ class MagazinesController < ApplicationController
       flash[:notice] = "Successfully added magazine."
       redirect_to magazine_path(@magazine.id)
     else
-      flash[:notice] = "Could not add magazine."
+      flash[:alert] = "Could not add magazine."
       render :new
     end
   end

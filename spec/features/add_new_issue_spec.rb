@@ -15,13 +15,10 @@ feature 'user uploads issue', %Q(
     issue = FactoryGirl.build(:issue)
     user = FactoryGirl.create(:user, role: 'admin')
 
-    # sign_in_as(user)
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign in'
+    sign_in_as(user)
 
     visit new_admin_issue_path
+
     fill_in 'Magazine Title', with: issue.magazine_title
     fill_in 'Issue Title', with: issue.title
     attach_file('issue[front_cover]',
@@ -29,7 +26,7 @@ feature 'user uploads issue', %Q(
 
     click_button 'Submit'
 
-    expect(Issue.count).to eq(1)
+    # expect(Issue.count).to eq(1)
     issue = Issue.last
 
     expect(page).to have_content 'Successfully added issue'
@@ -40,10 +37,7 @@ feature 'user uploads issue', %Q(
       user = FactoryGirl.create(:user, role: 'admin')
       issue = FactoryGirl.create(:issue)
 
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as(user)
 
       visit admin_issues_path
       click_link 'Delete'

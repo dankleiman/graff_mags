@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :issues, only: [:index, :show]
   resources :magazines, only:[:show, :update, :new, :create]
+  resources :contact_forms, only:[:new, :create]
 
   root 'issues#index'
   namespace :admin do

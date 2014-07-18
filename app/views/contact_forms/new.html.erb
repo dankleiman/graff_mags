@@ -1,0 +1,16 @@
+<div class="large-10 large-offset-1 columns">
+  <div class="row">
+    <h2>Contact Us</h2>
+  </div>
+  <div class="row">
+    <div class="small-5 columns contact-form" id="form">
+     <%= simple_form_for @contact_form do |f| %>
+     <%= f.input :name %>
+     <%= f.input :email %>
+     <%= f.input :message, as: :text %>
+
+     <%= f.submit 'Send Message', class: "button radius" %>
+     <% end %>
+   </div>
+ </div>
+</div>
