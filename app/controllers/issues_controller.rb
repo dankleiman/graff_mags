@@ -1,7 +1,8 @@
 class IssuesController < ApplicationController
 
   def index
-    @issues = Issue.all
+    row_count = Issue.count/6
+    @issues = Issue.limit(row_count*6)
   end
 
   def show
