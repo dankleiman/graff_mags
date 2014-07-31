@@ -1,28 +1,29 @@
-<%# navigation styled for Zurb Foundation 5 %>
 <div data-magellan-expedition="fixed" class="sticky">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
-      <li>
-        <%= link_to(root_path) do%>
-          <%= image_tag "LogoSized.png", height: 44, width: 120 %>
-        <% end %>
-      </li>
+      <li><%= link_to(image_tag("LogoSized.png"), root_path) %></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-     <div class="top-bar-section">
+     <section class="top-bar-section">
       <ul class="right">
         <%= render 'layouts/navigation_links' %>
-        <li class="toggle-topbar menu-icon"><a href="#"></a></li>
       </ul>
       <ul class="left">
-        <li data-magellan-arrival="library"><a href="#library">Library</a></li>
-        <li><a href="#" data-reveal-id="contact">Contact</a></li>
+        <li><%= link_to(image_tag("Home.png"), root_path) %></li>
+        <li><%= link_to(image_tag("Library.png"), "#library", :"data-magellan-arrival" => "library") %></li>
+        <li><%= link_to(image_tag("Shop.png"), "#", :"data-reveal-id" => "shop") %></li>
+        <li><%= link_to(image_tag("Contact.png"), "#", :"data-reveal-id" => "contact") %></li>
       </ul>
       <%= render 'layouts/admin' %>
-    </div>
+    </section>
   </nav>
 </div>
 
 <div id="contact" class="reveal-modal small" data-reveal>
   <%= render 'contact_forms/new', resource: ContactForm.new %>
+  <a class="close-reveal-modal" data-reveal>&#215;</a>
+</div>
+<div id="shop" class="reveal-modal small" data-reveal>
+  <p>Coming soon!</p>
   <a class="close-reveal-modal" data-reveal>&#215;</a>
 </div>
