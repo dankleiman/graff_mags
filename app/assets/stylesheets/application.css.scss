@@ -67,6 +67,9 @@ section .row {
   overflow:auto;
 }
 
+.title-area li {
+  margin-right: 20px;
+}
 .top-bar .name a {
   color: #2a2c2e;
 }
@@ -75,8 +78,8 @@ section .row {
   color: #14b8f5;
 }
 
-.top-bar-section{
-  float: right;
+.top-bar-section li a:not(.button):hover {
+    background:#eee !important;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button),
@@ -84,6 +87,7 @@ section .row {
  background: #eeeeee;
  color: #2a2c2e;
  padding: 5px;
+ margin: 0 10px;
 }
 
 #welcome-box {
