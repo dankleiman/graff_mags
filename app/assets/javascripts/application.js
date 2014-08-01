@@ -24,6 +24,8 @@ $(function() {
     $(window).trigger('reflow');
   });
 
+
+
   //defaults to hidden section
   $('.issue-details').hide();
   //reveals more fields for data entry
