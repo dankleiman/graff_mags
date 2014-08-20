@@ -33,16 +33,7 @@ gem 'foundation-rails'
 gem 'simple_form'
 gem 'mail_form'
 
-group :test, :development do
-  gem 'pry-rails'
-  gem 'dotenv-rails'
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara'
-  gem "factory_girl_rails", "~> 4.0"
-  gem 'launchy'
-  gem 'email_spec'
-  gem 'mailcatcher'
-end
+
 
 gem 'carrierwave'
 
@@ -55,6 +46,17 @@ gem "fog", "~> 1.3.1"
 gem "mini_magick"
 
 gem "rails4-autocomplete"
+
+group :test, :development do
+  gem 'pry-rails'
+  gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'launchy'
+  gem 'email_spec'
+  gem 'mailcatcher'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

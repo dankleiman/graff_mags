@@ -11,6 +11,7 @@
       <dd><%= link_to 'Media', admin_media_path %></dd>
       <dd><%= link_to 'Sizes', admin_sizes_path %></dd>
       <dd><%= link_to 'Bindings', admin_stitchings_path %></dd>
+      <dd><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></dd>
     </dl>
   <% end %>
 <% end %>
