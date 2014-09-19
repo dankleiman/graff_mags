@@ -1,4 +1,4 @@
-<div data-magellan-expedition="fixed" class="sticky">
+<div>
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li><%= link_to(image_tag("LogoSized.png"), root_path) %></li>
@@ -7,7 +7,7 @@
      <section class="top-bar-section" data-topbar>
       <ul class="left">
         <li><%= link_to(image_tag("Home.png"), root_path) %></li>
-        <li><%= link_to(image_tag("Library.png"), "#library", :"data-magellan-arrival" => "library") %></li>
+        <li><%= link_to(image_tag("Library.png"), issues_path) %></li>
         <li><%= link_to(image_tag("Shop.png"), "#", :"data-reveal-id" => "shop") %></li>
         <li><%= link_to(image_tag("Contact.png"), "#", :"data-reveal-id" => "contact") %></li>
       </ul>

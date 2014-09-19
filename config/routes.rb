@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :magazines, only:[:show, :update, :new, :create]
   resources :contact_forms, only:[:new, :create]
 
-  root 'issues#index'
+  root 'home#index'
   namespace :admin do
     resources :issues do
        get :autocomplete_magazine_title, :on => :collection
